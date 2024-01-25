@@ -13,8 +13,8 @@ A data frame with 309 rows and 15 variables:
 \item{race_eth}{Factor. The race/ethnicity of the individuals.}
 \item{edu}{Factor. The education level of the individuals.}
 \item{occ_group}{Factor. The occupation group of the individuals.}
-\item{status}{Factor. The work status of the individuals (either all workers or full-time only).}
-\item{is_fulltime}{Logical. Whether the individual is a full-time worker.}
+\item{univ}{Factor. Universe of workers, whether the denominator is all workers or full-time only.}
+\item{is_fulltime}{Logical. Whether the individual is a full-time worker. \code{NA} if distinction isn't included.}
 \item{count}{Numeric. The number of individuals in the group.}
 \item{earn_q20}{Numeric. The 20th percentile of earnings.}
 \item{earn_q25}{Numeric. The 25th percentile of earnings.}

@@ -20,3 +20,8 @@ data/wages.rda: data-raw/files/income_tbls.rds
 data/wages_by_puma.rda: data-raw/files/income_by_puma.rds
 
 data/spending.rda: $(wildcard data-raw/files/cx/*.xlsx)
+
+.PHONY: document
+document: 
+	R -q -e 'devtools::document()'
+

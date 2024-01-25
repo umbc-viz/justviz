@@ -42,3 +42,4 @@ Authors@R:
     person("Camille", "Seaberry", , "camille.seaberry@gmail.com", role = "ctb",
            comment = c(ORCID = "0000-0002-5102-995X"))
 License: MIT + file LICENSE
+URL: https://umbc-viz.github.io/justviz/

@@ -4,7 +4,7 @@ RUN_BASH = bash $<
 datasets := $(patsubst data-raw/%.R,data/%.rda,$(wildcard data-raw/*.R))
 
 .PHONY: all
-all: $(datasets)
+all: $(datasets) document
 
 
 data/%.rda: data-raw/%.R

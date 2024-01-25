@@ -34,8 +34,7 @@ Suggests:
     tsibble
 Remotes: 
     CT-Data-Haven/cwi,
-    camille-s/camiller,
-    CT-Data-Haven/dcws
+    camille-s/camiller
 RoxygenNote: 7.3.1
 Roxygen: list(markdown = TRUE)
 Authors@R: 

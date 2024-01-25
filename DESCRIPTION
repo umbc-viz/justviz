@@ -1,0 +1,44 @@
+Package: justviz
+Type: Package
+Title: justviz visualization tools
+Version: 0.1.0
+Description: Datasets and helper functions for UMBC's GES 778, data visualization.
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 4.1.0)
+Imports: 
+    classInt,
+    cli,
+    sf
+Suggests: 
+    camiller (>= 0.2.3),
+    cwi (>= 1.6.3),
+    dcws (>= 0.1.5),
+    dplyr,
+    fabletools,
+    feasts,
+    forcats,
+    httr,
+    janitor,
+    OasisR,
+    openxlsx,
+    osmdata,
+    purrr,
+    readr,
+    stringr,
+    tibble,
+    tidycensus,
+    tidyr,
+    tigris,
+    tsibble
+Remotes: 
+    CT-Data-Haven/cwi,
+    camille-s/camiller,
+    CT-Data-Haven/dcws
+RoxygenNote: 7.3.1
+Roxygen: list(markdown = TRUE)
+Authors@R: 
+    person("Camille", "Seaberry", , "camille.seaberry@gmail.com", role = "ctb",
+           comment = c(ORCID = "0000-0002-5102-995X"))
+License: MIT + file LICENSE

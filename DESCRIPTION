@@ -10,8 +10,8 @@ Depends:
 Imports: 
     classInt,
     cli,
-    sf
 Suggests: 
+    sf,
     camiller (>= 0.2.3),
     cwi (>= 1.6.3),
     dcws (>= 0.1.5),

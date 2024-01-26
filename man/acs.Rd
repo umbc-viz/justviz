@@ -40,7 +40,7 @@ A data frame with 1870 rows and 30 variables:
 }
 }
 \source{
-US Census Bureau. American Community Survey 2022 5-year estimates. Calculated by Camille with the \code{\link{tidycensus}} and \code{\link{cwi}} packages.
+Calculated from US Census Bureau. American Community Survey 2022 5-year estimates. Calculated by Camille with the \href{https://github.com/walkerke/tidycensus}{\code{tidycensus}} and \href{https://github.com/CT-Data-Haven/cwi}{\code{cwi}} packages.
 }
 \usage{
 acs

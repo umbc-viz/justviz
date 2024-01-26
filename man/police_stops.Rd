@@ -15,7 +15,7 @@ A data frame with 13 rows and 5 variables:
 }
 }
 \source{
-DataHaven Community Wellbeing Survey 2021, analyzed with Camille's packages \code{\link{cwi}} and \code{\link{dcws}}. \url{https://ctdatahaven.org/reports/datahaven-community-wellbeing-survey}
+DataHaven Community Wellbeing Survey 2021, analyzed with Camille's packages \href{https://github.com/CT-Data-Haven/cwi}{\code{cwi}} and \code{dcws} (not currently public). \url{https://ctdatahaven.org/reports/datahaven-community-wellbeing-survey}
 }
 \usage{
 police_stops

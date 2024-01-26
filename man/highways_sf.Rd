@@ -14,7 +14,7 @@ An sf data frame with 7540 rows and 4 variables:
 }
 }
 \source{
-OpenStreetMap database via the \code{\link{osmdata}} package.
+OpenStreetMap database via the \href{https://github.com/ropensci/osmdata}{\code{osmdata}} package.
 }
 \usage{
 highways_sf

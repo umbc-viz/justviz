@@ -14,7 +14,7 @@ A data frame with 1436 rows and 4 variables:
 }
 }
 \source{
-U.S. Bureau of Labor Statistics, Local Area Unemployment Statistics via API with the \code{\link{cwi}} package. \url{https://www.bls.gov/lau/} Seasonal adjustment is done with the BLS' methodology using the \code{\link{feasts}} package.
+U.S. Bureau of Labor Statistics, Local Area Unemployment Statistics via API with the \href{https://github.com/CT-Data-Haven/cwi}{\code{cwi}} package. \url{https://www.bls.gov/lau/} Seasonal adjustment is done with the BLS' methodology via \code{\link[feasts:X_13ARIMA_SEATS]{feasts::X_13ARIMA_SEATS}}.
 }
 \usage{
 unemployment

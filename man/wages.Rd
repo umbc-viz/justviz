@@ -25,7 +25,7 @@ A data frame with 309 rows and 15 variables:
 }
 }
 \source{
-U.S. Census Bureau, American Community Survey, Integrated Public Use Microdata Series \url{https://usa.ipums.org/usa/}. Analyzed using the \code{\link{srvyr}} package.
+U.S. Census Bureau, American Community Survey, Integrated Public Use Microdata Series \url{https://usa.ipums.org/usa/}. Analyzed using the \href{https://github.com/gergness/srvyr}{\code{srvyr}} package.
 }
 \usage{
 wages

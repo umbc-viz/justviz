@@ -1,11 +1,40 @@
-RUN_R = Rscript $<
-RUN_BASH = bash $<
+# h/t to @jimhester and @yihui for this parse block:
+# https://github.com/yihui/knitr/blob/dc5ead7bcfc0ebd2789fe99c527c7d91afb3de4a/Makefile#L1-L4
+# Note the portability change as suggested in the manual:
+# https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Writing-portable-packages
+PKGNAME := $(shell sed -n "s/Package: *\([^ ]*\)/\1/p" DESCRIPTION)
+PKGVERS := $(shell sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION)
+PKGSRC  := $(shell basename `pwd`)
+
+R_CMD = R -q -e
+SRC = $(R_CMD) "devtools::load_all(); source('$<')"
+
+.PHONY: all check document vignettes install clean datasets
+
+all: datasets document check README.md
 
 datasets := $(patsubst data-raw/%.R,data/%.rda,$(wildcard data-raw/*.R))
 
-.PHONY: all
-all: $(datasets) document
+############################# UTILS
+check: DESCRIPTION
+	$(R_CMD) "devtools::check(cran = FALSE)"
 
+document:
+	$(R_CMD) "devtools::document()"
+
+vignettes: vignettes/*.Rmd
+	$(R_CMD) "devtools::build_vignettes()"
+
+install:
+	$(R_CMD) "devtools::install()"
+
+README.md: README.Rmd
+	$(R_CMD) "devtools::build_readme()"
+
+clean:
+	@rm -rf $(PKGNAME)_$(PKGVERS).tar.gz $(PKGNAME).Rcheck docs
+
+############################# DATASETS
 
 data/%.rda: data-raw/%.R
 	$(RUN_R)
@@ -20,8 +49,3 @@ data/wages.rda: data-raw/files/income_tbls.rds
 data/wages_by_puma.rda: data-raw/files/income_by_puma.rds
 
 data/spending.rda: $(wildcard data-raw/files/cx/*.xlsx)
-
-.PHONY: document
-document: 
-	R -q -e 'devtools::document()'
-

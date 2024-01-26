@@ -13,7 +13,7 @@ An sf data frame with 606 rows and 3 variables:
 }
 }
 \source{
-U.S. Census Bureau, TIGER boundary files via the \code{\link{tigris}} package
+U.S. Census Bureau, TIGER boundary files via the \href{https://github.com/walkerke/tigris/}{\code{tigris}} package
 }
 \usage{
 tracts_sf

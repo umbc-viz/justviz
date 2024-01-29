@@ -30,4 +30,7 @@ spending
 \description{
 A dataset containing mean amounts of money spent on different categories of goods each year, broken down by US household income quintile. The data comes from the US Census Bureau's annual Consumer Expenditure Survey. Dollar amounts are given for the year reported, not adjusted for inflation.
 }
+\examples{
+ head(spending)
+}
 \keyword{datasets}

@@ -2,3 +2,22 @@ url: https://umbc-viz.github.io/justviz/
 template:
   bootstrap: 5
 
+reference:
+- title: "Datasets"
+  contents:
+  - acs
+  - cdc
+  - ejscreen
+  - highways_sf
+  - police_stops
+  - spending
+  - tracts_sf
+  - unemployment
+  - vacant
+  - wages_by_puma
+  - wages
+  - youth_risks
+- title: "Functions"
+  contents:
+  - jenks
+  - round_sum100

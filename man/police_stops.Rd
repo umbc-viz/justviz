@@ -23,4 +23,7 @@ police_stops
 \description{
 A dataset containing responses to questions about unfair treatment by police from the 2021 DataHaven Community Wellbeing Survey. The data is broken down by location, category, and group, with values for adults in Connecticut, New Haven, and the Greater New Haven area.
 }
+\examples{
+ head(police_stops)
+}
 \keyword{datasets}

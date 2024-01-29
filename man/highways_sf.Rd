@@ -22,4 +22,7 @@ highways_sf
 \description{
 An \code{sf} object containing highways (specifically keyed as motorways or trunks) in Baltimore city and surrounding counties from OpenStreetMap.
 }
+\examples{
+ head(highways_sf)
+}
 \keyword{datasets}

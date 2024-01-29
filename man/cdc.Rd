@@ -24,4 +24,7 @@ cdc
 \description{
 A dataset containing health indicators from the CDC's PLACES project for the US, Maryland, and the state's counties and census tracts. Where tract-level data couldn't be directly measured, values are modeled. This is the most recent data from the 2023 update. The denominator for all variables is the population of adults ages 18 and older, except missing health insurance, which is based on adults ages 18 to 64.
 }
+\examples{
+ head(cdc)
+}
 \keyword{datasets}

@@ -21,4 +21,7 @@ tracts_sf
 \description{
 A dataset containing 2020 census tract boundaries for Baltimore and surrounding counties. The data comes from the \code{tigris} package with geometries simplified.
 }
+\examples{
+ head(tracts_sf)
+}
 \keyword{datasets}

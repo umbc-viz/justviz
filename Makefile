@@ -9,9 +9,9 @@ PKGSRC  := $(shell basename `pwd`)
 R_CMD = R -q -e
 SRC = $(R_CMD) "devtools::load_all(); source('$<')"
 
-.PHONY: all check document vignettes install clean datasets
+.PHONY: all check document vignettes install clean datasets readme
 
-all: datasets document check README.md
+all: datasets document check readme
 
 datasets := $(patsubst data-raw/%.R,data/%.rda,$(wildcard data-raw/*.R))
 
@@ -27,6 +27,11 @@ vignettes: vignettes/*.Rmd
 
 install:
 	$(R_CMD) "devtools::install()"
+
+site: README.md document
+	$(R_CMD) "devtools::build_site()"
+
+readme: README.md
 
 README.md: README.Rmd
 	$(R_CMD) "devtools::build_readme()"

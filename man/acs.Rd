@@ -48,4 +48,7 @@ acs
 \description{
 A dataset containing indicators from the US Census Bureau's 2022 American Community Survey 5-year estimates. These are given for several geographic levels, including the US, every metropolitan statistical area (MSA) in the country, the state of Maryland, and every county and census tract in Maryland.
 }
+\examples{
+  head(acs)
+}
 \keyword{datasets}

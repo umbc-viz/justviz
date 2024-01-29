@@ -17,7 +17,7 @@ You can install the development version of justviz like so:
 
 ``` r
 install.packages("devtools")
-devtools::install_github("camille-s/justviz")
+devtools::install_github("umbc-viz/justviz")
 ```
 
-See the course notes for examples.
+See the [course notes](https://umbc-viz.github.io/ges778/) for examples.

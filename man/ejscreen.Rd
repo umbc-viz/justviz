@@ -23,4 +23,7 @@ ejscreen
 \description{
 A dataset containing environmental health risk factors from the EPA's EJSCREEN environment justice index for census tracts in Maryland. Values are calculated based on aggregations of risk factors, then given as nationwide percentiles. Columns starting with \code{"d"} are adjusted for one of two different definitions of vulnerable populations.
 }
+\examples{
+ head(ejscreen)
+}
 \keyword{datasets}

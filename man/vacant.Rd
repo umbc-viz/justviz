@@ -29,4 +29,7 @@ vacant
 \description{
 A dataset containing vacancy rates and other values related to housing for tracts in Baltimore; Stamford, CT; and New Haven, CT. The data comes from the 2022 American Community Survey (ACS).
 }
+\examples{
+ head(vacant)
+}
 \keyword{datasets}

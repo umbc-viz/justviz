@@ -22,4 +22,7 @@ unemployment
 \description{
 A dataset containing monthly unemployment rates from 2000 to 2023 for Maryland, Baltimore city, and surrounding counties. The data comes from the Bureau of Labor Statistics' Local Area Unemployment Statistics (LAUS).
 }
+\examples{
+ head(unemployment)
+}
 \keyword{datasets}

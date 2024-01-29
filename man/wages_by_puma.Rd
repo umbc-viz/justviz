@@ -23,4 +23,7 @@ wages_by_puma
 \description{
 A dataset containing median individual earnings by sex for all Public Use Microdata Areas (PUMAs) in the US, for adults ages 25 and up working full time with positive earnings. The data is calculated from the 2022 American Community Survey (ACS) Public Use Microdata Sample (PUMS) data via the Integrated Public Use Microdata Series (IPUMS). PUMAs are areas of at least 100,000 people.
 }
+\examples{
+ head(wages_by_puma)
+}
 \keyword{datasets}

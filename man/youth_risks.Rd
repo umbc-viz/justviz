@@ -24,4 +24,7 @@ youth_risks
 \description{
 A dataset containing Likert-style responses to questions about different outcomes for youth in their area, from the 2021 DataHaven Community Wellbeing Survey. The data is broken down by category, group, and response with values for adults in Connecticut.
 }
+\examples{
+ head(youth_risks)
+}
 \keyword{datasets}

@@ -24,7 +24,13 @@
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/umbc-viz/justviz/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -32,7 +38,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Shapefile of highways</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/umbc-viz/justviz/blob/HEAD/R/data.R" class="external-link"><code>R/data.R</code></a></small>
       <div class="d-none name"><code>highways_sf.Rd</code></div>
     </div>
 
@@ -66,6 +72,25 @@
     <p>OpenStreetMap database via the <a href="https://github.com/ropensci/osmdata" class="external-link"><code>osmdata</code></a> package.</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">highways_sf</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          osm_id                    name lanes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4416441 4416441                    &lt;NA&gt;     5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4416465 4416465                    &lt;NA&gt;     3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4874471 4874471                    &lt;NA&gt;     3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4985052 4985052        Patuxent Freeway     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4985054 4985054        Patuxent Freeway     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5041550 5041550 Custis Memorial Parkway     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     geometry</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4416441                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -76.64110, -76.63998, -76.63847, 39.27041, 39.27029, 39.27012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4416465                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -76.81415, -76.81360, -76.81353, -76.81346, -76.81335, -76.81322, -76.81257, 39.23545, 39.23297, 39.23272, 39.23247, 39.23219, 39.23191, 39.23063</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4874471                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -77.15293, -77.15265, -77.15239, 39.00704, 39.00764, 39.00814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4985052                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -76.89644, -76.89605, 39.18444, 39.18431</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4985054                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -76.89582, -76.89622, 39.18456, 39.18469</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5041550 -77.12362, -77.12231, -77.12196, -77.12146, -77.12113, -77.12082, -77.12068, -77.12056, -77.12045, -77.12025, -77.12006, -77.11974, -77.11949, -77.11926, -77.11884, -77.11840, -77.11814, -77.11791, -77.11779, -77.11759, -77.11728, -77.11694, -77.11660, -77.11624, -77.11586, -77.11545, -77.11517, -77.11468, -77.11423, -77.11099, 38.88092, 38.88164, 38.88185, 38.88217, 38.88242, 38.88268, 38.88280, 38.88292, 38.88304, 38.88326, 38.88348, 38.88390, 38.88424, 38.88457, 38.88515, 38.88572, 38.88602, 38.88625, 38.88636, 38.88653, 38.88677, 38.88700, 38.88721, 38.88740, 38.88758, 38.88775, 38.88784, 38.88799, 38.88811, 38.88889</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 

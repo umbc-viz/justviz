@@ -24,7 +24,13 @@
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/umbc-viz/justviz/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -32,7 +38,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Census tracts for the Baltimore area</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/umbc-viz/justviz/blob/HEAD/R/data.R" class="external-link"><code>R/data.R</code></a></small>
       <div class="d-none name"><code>tracts_sf.Rd</code></div>
     </div>
 
@@ -63,6 +69,25 @@
     <p>U.S. Census Bureau, TIGER boundary files via the <a href="https://github.com/walkerke/tigris/" class="external-link"><code>tigris</code></a> package</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">tracts_sf</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                county       geoid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1      Baltimore city 24510160300</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2      Baltimore city 24510020100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    Baltimore County 24005402602</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4      Baltimore city 24510190300</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5      Baltimore city 24510271801</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 Anne Arundel County 24003730403</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                      geometry</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                -76.64612, -76.64552, -76.64270, -76.64322, -76.64464, -76.64612, 39.30311, 39.29389, 39.29401, 39.30321, 39.30318, 39.30311</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                                     -76.59047, -76.59011, -76.58706, -76.58741, -76.59047, 39.29168, 39.28574, 39.28585, 39.29181, 39.29168</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 -76.76732, -76.77651, -76.78166, -76.78875, -76.79125, -76.77872, -76.77561, -76.76972, -76.76732, 39.36731, 39.37088, 39.37142, 39.36997, 39.36596, 39.36138, 39.36541, 39.36630, 39.36731</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                -76.64696, -76.64643, -76.64186, -76.64241, -76.64522, -76.64696, 39.28815, 39.27949, 39.28099, 39.28837, 39.28823, 39.28815</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                -76.68336, -76.69006, -76.68352, -76.68080, -76.67596, -76.68336, 39.35176, 39.34759, 39.34294, 39.34595, 39.34903, 39.35176</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 -76.62029, -76.62698, -76.63143, -76.63202, -76.63163, -76.62651, -76.61864, -76.61910, -76.62029, 39.15104, 39.15131, 39.15288, 39.14986, 39.14442, 39.14059, 39.13982, 39.14761, 39.15104</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 

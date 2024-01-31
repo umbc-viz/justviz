@@ -1,5 +1,17 @@
 year <- 2022
 
+# shapefiles to get area
+areas <- list(
+  msa = tigris::core_based_statistical_areas(year = 2021),
+  county = tigris::counties(state = "24", cb = TRUE, year = year),
+  tract = tigris::tracts(state = "24", cb = TRUE, year = year)
+) |>
+  purrr::map(dplyr::select, geoid = GEOID, area_sqm = ALAND) |>
+  purrr::map(sf::st_drop_geometry) |>
+  dplyr::bind_rows(.id = "level") |>
+  dplyr::mutate(area_sqmi = measurements::conv_unit(area_sqm, "m2", "mi2")) |>
+  dplyr::select(-area_sqm)
+
 county_fips <- dplyr::filter(tidycensus::fips_codes, state == "MD") |>
   dplyr::select(county_code, county)
 
@@ -9,7 +21,9 @@ fetch <- purrr::map(tbls, cwi::multi_geo_acs, towns = NULL, state = "24", tracts
                     us = TRUE, msa = TRUE, new_england = FALSE,
                     year = year) |>
   purrr::map(cwi::label_acs, year = year) |>
-  purrr::map(dplyr::filter, !grepl("Micro Area", name), !grepl(" PR ", name))
+  purrr::map(dplyr::filter, !grepl("Micro Area", name), !grepl(" PR ", name)) |>
+  purrr::map(dplyr::mutate, level = forcats::fct_relabel(level, stringr::str_remove, "^\\d_"))
+
 
 out <- list()
 
@@ -84,8 +98,14 @@ out[["poverty"]] <- fetch$poverty |>
   camiller::calc_shares(group = label, denom = "pov_status_determined", digits = 2) |>
   dplyr::rename(group = label)
 
+# area
+out[["area"]] <- fetch$race |>
+  dplyr::distinct(level, geoid, name) |>
+  dplyr::left_join(areas, by = c("level", "geoid")) |>
+  tidyr::pivot_longer(-level:-name, names_to = "group", values_to = "estimate")
 
-denoms <- c("total_pop", "total_hh", "median_hh_income", "ages25plus", "pov_status_determined")
+
+denoms <- c("total_pop", "total_hh", "median_hh_income", "ages25plus", "pov_status_determined", "area_sqmi")
 
 acs <- out |>
   # purrr::map(dplyr::rename, value = dplyr::any_of("share")) |>
@@ -98,11 +118,11 @@ acs <- out |>
   # dplyr::rename(total_pop = estimate_total_pop, total_hh = estimate_total_hh, median_hh_income = estimate_median_hh_income) |>
   dplyr::select(-dplyr::matches("estimate_")) |>
   dplyr::rename_with(\(x) stringr::str_remove(x, "share_")) |>
-  dplyr::mutate(level = forcats::fct_relabel(level, stringr::str_remove, "^\\d_")) |>
   dplyr::filter(total_pop > 0) |>
   dplyr::mutate(county_code = substring(name, 3, 5)) |>
   dplyr::left_join(county_fips, by = "county_code") |>
-  dplyr::select(-county_code)
+  dplyr::select(-county_code) |>
+  dplyr::mutate(pop_density = total_pop / area_sqmi)
 
 # diversity index
 acs$diversity_idx <- OasisR::HLoc(dplyr::select(acs, white:other_race))

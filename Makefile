@@ -8,6 +8,7 @@ PKGSRC  := $(shell basename `pwd`)
 
 R_CMD = R -q -e
 SRC = $(R_CMD) "devtools::load_all(); source('$<')"
+RUN_BASH = bash $<
 
 .PHONY: all check document vignettes install clean datasets readme
 
@@ -42,7 +43,7 @@ clean:
 ############################# DATASETS
 
 data/%.rda: data-raw/%.R
-	$(RUN_R)
+	$(SRC)
 
 data-raw/files/ejscreen_md.csv: data-raw/prep_ejscreen.sh
 	$(RUN_BASH)

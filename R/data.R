@@ -32,8 +32,10 @@
 #'   \item{pov_status_determined}{Numeric. Population for whom poverty status is determined.}
 #'   \item{poverty}{Numeric. Poverty rate, or the share of the population for whom poverty status is determined that lives in a household with income below the federal poverty level.}
 #'   \item{low_income}{Numeric. Low-income rate, or the share of the population for whom poverty status is determined that lives in a household with income below 2 times the federal poverty level.}
+#'   \item{area_sqmi}{Numeric. Land area in square miles.}
+#'   \item{pop_density}{Numeric. Population per square mile.}
 #' }
-#' @examples 
+#' @examples
 #'   head(acs)
 #' @source Calculated from US Census Bureau. American Community Survey 2022 5-year estimates. Calculated by Camille with the [`tidycensus`](https://github.com/walkerke/tidycensus) and [`cwi`](https://github.com/CT-Data-Haven/cwi) packages.
 "acs"
@@ -50,7 +52,7 @@
 #'   \item{value}{Numeric. The rate of the corresponding population.}
 #'   \item{pop}{Numeric. The adult population size for the given location and year, used as the denominator.}
 #' }
-#' @examples 
+#' @examples
 #'  head(cdc)
 #' @source Centers for Disease Control and Prevention (CDC) PLACES Project. Data portal, definitions, and methodology are available at [https://www.cdc.gov/places/](https://www.cdc.gov/places/)
 "cdc"
@@ -66,7 +68,7 @@
 #'   \item{d2_ptile}{Integer. The percentile of indexed values scaled based on a two-factor demographic index (percent low-income and percent people of color).}
 #'   \item{d5_ptile}{Integer. The percentile of indexed values scaled based on a five-factor demographic index (percent low-income, unemployment rate, percent limited English, percent without high school diploma, low life expectancy).}
 #' }
-#' @examples 
+#' @examples
 #'  head(ejscreen)
 #' @source Environmental Protection Agency (EPA) EJSCREEN Environment Justice Index. Data portal, definitions, and methodology are available at [https://www.epa.gov/ejscreen/technical-information-about-ejscreen](https://www.epa.gov/ejscreen/technical-information-about-ejscreen)
 "ejscreen"
@@ -81,7 +83,7 @@
 #'   \item{lanes}{Numeric. The number of lanes on the highway.}
 #'   \item{geometry}{LINESTRING. The geometric representation of the highway.}
 #' }
-#' @examples 
+#' @examples
 #'  head(highways_sf)
 #' @source OpenStreetMap database via the [`osmdata`](https://github.com/ropensci/osmdata) package.
 "highways_sf"
@@ -97,7 +99,7 @@
 #'   \item{ever_unfairly_stopped}{Numeric. The share of respondents who reported having ever been unfairly stopped, harassed, or abused by police.}
 #'   \item{multiple_times_3yr}{Numeric. The share of respondents who reported this treatment having happened multiple times in the past 3 years.}
 #' }
-#' @examples 
+#' @examples
 #'  head(police_stops)
 #' @source DataHaven Community Wellbeing Survey 2021, analyzed with Camille's packages [`cwi`](https://github.com/CT-Data-Haven/cwi) and `dcws` (not currently public). [https://ctdatahaven.org/reports/datahaven-community-wellbeing-survey](https://ctdatahaven.org/reports/datahaven-community-wellbeing-survey)
 "police_stops"
@@ -120,7 +122,7 @@
 #'   \item{l4}{Character. The fourth level category of the item. `NA` if not applicable.}
 #'   \item{l5}{Character. The fifth level category of the item. `NA` if not applicable.}
 #' }
-#' @examples 
+#' @examples
 #'  head(spending)
 #' @source US Census Bureau's Consumer Expenditure Survey, available from the Bureau of Labor Statistics [https://www.bls.gov/cex/data.htm](https://www.bls.gov/cex/data.htm)
 "spending"
@@ -134,7 +136,7 @@
 #'   \item{geoid}{Character. The FIPS code for the census tract.}
 #'   \item{geometry}{POLYGON. The geometric representation of the census tract boundary.}
 #' }
-#' @examples 
+#' @examples
 #'  head(tracts_sf)
 #' @source U.S. Census Bureau, TIGER boundary files via the [`tigris`](https://github.com/walkerke/tigris/) package
 "tracts_sf"
@@ -149,7 +151,7 @@
 #'   \item{reported_rate}{Numeric. The reported unemployment rate.}
 #'   \item{adjusted_rate}{Numeric. The seasonally adjusted unemployment rate.}
 #' }
-#' @examples 
+#' @examples
 #'  head(unemployment)
 #' @source U.S. Bureau of Labor Statistics, Local Area Unemployment Statistics via API with the [`cwi`](https://github.com/CT-Data-Haven/cwi) package. [https://www.bls.gov/lau/](https://www.bls.gov/lau/) Seasonal adjustment is done with the BLS' methodology via [`feasts::X_13ARIMA_SEATS`].
 "unemployment"
@@ -171,7 +173,7 @@
 #'   \item{area_sqmi}{Numeric. The area in square miles.}
 #'   \item{housing_density}{Numeric. The housing density (total units per square mile).}
 #' }
-#' @examples 
+#' @examples
 #'  head(vacant)
 #' @source Calculated from US Census Bureau. American Community Survey 2022 5-year estimates. Calculated by Camille with the [`tidycensus`](https://github.com/walkerke/tidycensus) and [`cwi`](https://github.com/CT-Data-Haven/cwi) packages.
 "vacant"
@@ -187,7 +189,7 @@
 #'   \item{count}{Numeric. The number of individuals.}
 #'   \item{earn}{Numeric. The median earnings.}
 #' }
-#' @examples 
+#' @examples
 #'  head(wages_by_puma)
 #' @source U.S. Census Bureau, American Community Survey, Integrated Public Use Microdata Series [https://usa.ipums.org/usa/](https://usa.ipums.org/usa/). Analyzed using the [`srvyr`](https://github.com/gergness/srvyr) package.
 "wages_by_puma"
@@ -213,7 +215,7 @@
 #'   \item{earn_q80}{Numeric. The 80th percentile of earnings.}
 #'   \item{sample_n}{Numeric. The sample size.}
 #' }
-#' @examples 
+#' @examples
 #'  head(wages)
 #' @source U.S. Census Bureau, American Community Survey, Integrated Public Use Microdata Series [https://usa.ipums.org/usa/](https://usa.ipums.org/usa/). Analyzed using the [`srvyr`](https://github.com/gergness/srvyr) package.
 "wages"
@@ -230,7 +232,7 @@
 #'   \item{response}{Factor. The response to the question (almost certain, very likely, a toss up, not very likely, or not at all likely).}
 #'   \item{value}{Numeric. The share of respondents giving the response.}
 #' }
-#' @examples 
+#' @examples
 #'  head(youth_risks)
 #' @source DataHaven Community Wellbeing Survey 2021, analyzed with Camille's packages [`cwi`](https://github.com/CT-Data-Haven/cwi) and `dcws` (not currently public). [https://ctdatahaven.org/reports/datahaven-community-wellbeing-survey](https://ctdatahaven.org/reports/datahaven-community-wellbeing-survey)
 "youth_risks"

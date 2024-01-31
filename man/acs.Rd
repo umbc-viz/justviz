@@ -5,7 +5,7 @@
 \alias{acs}
 \title{Demographics and socio-economic indicators from the 2022 ACS}
 \format{
-A data frame with 1870 rows and 30 variables:
+A data frame with 1870 rows and 32 variables:
 \describe{
 \item{level}{Factor. Geographic level (us, msa, state, county, or tract).}
 \item{county}{Character. Name of the county for tracts, \code{NA} otherwise.}
@@ -37,6 +37,8 @@ A data frame with 1870 rows and 30 variables:
 \item{pov_status_determined}{Numeric. Population for whom poverty status is determined.}
 \item{poverty}{Numeric. Poverty rate, or the share of the population for whom poverty status is determined that lives in a household with income below the federal poverty level.}
 \item{low_income}{Numeric. Low-income rate, or the share of the population for whom poverty status is determined that lives in a household with income below 2 times the federal poverty level.}
+\item{area_sqmi}{Numeric. Land area in square miles.}
+\item{pop_density}{Numeric. Population per square mile.}
 }
 }
 \source{

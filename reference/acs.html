@@ -53,7 +53,7 @@
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A data frame with 1870 rows and 30 variables:</p><dl><dt>level</dt>
+    <p>A data frame with 1870 rows and 32 variables:</p><dl><dt>level</dt>
 <dd><p>Factor. Geographic level (us, msa, state, county, or tract).</p></dd>
 
 <dt>county</dt>
@@ -143,6 +143,12 @@
 <dt>low_income</dt>
 <dd><p>Numeric. Low-income rate, or the share of the population for whom poverty status is determined that lives in a household with income below 2 times the federal poverty level.</p></dd>
 
+<dt>area_sqmi</dt>
+<dd><p>Numeric. Land area in square miles.</p></dd>
+
+<dt>pop_density</dt>
+<dd><p>Numeric. Population per square mile.</p></dd>
+
 
 </dl></div>
     <div class="section level2">
@@ -153,16 +159,16 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">acs</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 30</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 32</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   level county name  total_pop white black latino asian other_race diversity_idx</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> us    <span style="color: #BB0000;">NA</span>     Unit… 331<span style="text-decoration: underline;">097</span>593  0.59  0.12   0.19  0.06       0.05         0.744</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> msa   <span style="color: #BB0000;">NA</span>     Abil…    <span style="text-decoration: underline;">176</span>656  0.63  0.07   0.25  0.02       0.03         0.626</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> msa   <span style="color: #BB0000;">NA</span>     Akro…    <span style="text-decoration: underline;">700</span>578  0.78  0.12   0.02  0.03       0.05         0.486</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> msa   <span style="color: #BB0000;">NA</span>     Alba…    <span style="text-decoration: underline;">147</span>716  0.41  0.52   0.03  0.01       0.03         0.598</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> msa   <span style="color: #BB0000;">NA</span>     Alba…    <span style="text-decoration: underline;">128</span>598  0.83  0      0.1   0.01       0.06         0.433</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> msa   <span style="color: #BB0000;">NA</span>     Alba…    <span style="text-decoration: underline;">901</span>729  0.77  0.07   0.06  0.05       0.05         0.532</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20 more variables: foreign_born &lt;dbl&gt;, total_hh &lt;dbl&gt;, homeownership &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 22 more variables: foreign_born &lt;dbl&gt;, total_hh &lt;dbl&gt;, homeownership &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_cost_burden &lt;dbl&gt;, total_severe_cost_burden &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   owner_cost_burden &lt;dbl&gt;, owner_severe_cost_burden &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   renter_cost_burden &lt;dbl&gt;, renter_severe_cost_burden &lt;dbl&gt;,</span></span>

@@ -31,7 +31,7 @@ U.S. Census Bureau, American Community Survey, Integrated Public Use Microdata S
 wages
 }
 \description{
-A dataset containing median individual earnings by various dimensions (education, occupation, etc.) for the US and Maryland, for adults ages 25 and up with positive earnings. The data is calculated from the 2022 American Community Survey (ACS) Public Use Microdata Sample (PUMS) data via the Integrated Public Use Microdata Series (IPUMS).
+A dataset containing median individual earnings by various dimensions (education, occupation, etc.) for the US and Maryland, for adults ages 25 and up with positive earnings. The data is calculated from the 2021 American Community Survey (ACS) Public Use Microdata Sample (PUMS) data via the Integrated Public Use Microdata Series (IPUMS).
 }
 \examples{
  head(wages)

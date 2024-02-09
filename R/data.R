@@ -180,7 +180,7 @@
 
 
 #' @title Median wages by PUMA
-#' @description A dataset containing median individual earnings by sex for all Public Use Microdata Areas (PUMAs) in the US, for adults ages 25 and up working full time with positive earnings. The data is calculated from the 2022 American Community Survey (ACS) Public Use Microdata Sample (PUMS) data via the Integrated Public Use Microdata Series (IPUMS). PUMAs are areas of at least 100,000 people.
+#' @description A dataset containing median individual earnings by sex for all Public Use Microdata Areas (PUMAs) in the US, for adults ages 25 and up working full time with positive earnings. The data is calculated from the 2021 American Community Survey (ACS) Public Use Microdata Sample (PUMS) data via the Integrated Public Use Microdata Series (IPUMS). PUMAs are areas of at least 100,000 people.
 #' @format A data frame with `r nrow(wages_by_puma)` rows and `r ncol(wages_by_puma)` variables:
 #' \describe{
 #'   \item{statefip}{Character. The state FIPS code.}
@@ -196,7 +196,7 @@
 
 
 #' @title Median wages by demographic
-#' @description A dataset containing median individual earnings by various dimensions (education, occupation, etc.) for the US and Maryland, for adults ages 25 and up with positive earnings. The data is calculated from the 2022 American Community Survey (ACS) Public Use Microdata Sample (PUMS) data via the Integrated Public Use Microdata Series (IPUMS).
+#' @description A dataset containing median individual earnings by various dimensions (education, occupation, etc.) for the US and Maryland, for adults ages 25 and up with positive earnings. The data is calculated from the 2021 American Community Survey (ACS) Public Use Microdata Sample (PUMS) data via the Integrated Public Use Microdata Series (IPUMS).
 #' @format A data frame with `r nrow(wages)` rows and `r ncol(wages)` variables:
 #' \describe{
 #'   \item{dimension}{Factor. The dimension across which values are calculated.}

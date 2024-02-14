@@ -122,7 +122,8 @@ acs <- out |>
   dplyr::mutate(county_code = substring(name, 3, 5)) |>
   dplyr::left_join(county_fips, by = "county_code") |>
   dplyr::select(-county_code) |>
-  dplyr::mutate(pop_density = total_pop / area_sqmi)
+  dplyr::mutate(pop_density = total_pop / area_sqmi) |>
+  dplyr::mutate(level = forcats::as_factor(level))
 
 # diversity index
 acs$diversity_idx <- OasisR::HLoc(dplyr::select(acs, white:other_race))

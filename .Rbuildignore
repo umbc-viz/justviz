@@ -8,3 +8,6 @@ Makefile
 ^docs$
 ^pkgdown$
 ^\.github$
+
+R/percentage.R
+R/dollar.R

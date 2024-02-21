@@ -11,10 +11,10 @@ SRC = $(R_CMD) "devtools::load_all(); source('$<')"
 RUN_BASH = bash $<
 
 .PHONY: all check document vignettes install clean datasets readme
-
-all: datasets document check readme
-
 datasets := $(patsubst data-raw/%.R,data/%.rda,$(wildcard data-raw/*.R))
+
+all: $(datasets) document check readme
+
 
 ############################# UTILS
 check: DESCRIPTION

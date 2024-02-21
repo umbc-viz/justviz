@@ -3,7 +3,7 @@ fetch <- cwi::laus_trend(names = c("Maryland", "Baltimore", "Baltimore County", 
   tidyr::unnest(c(unemployment_rate, unemployment, employment, labor_force)) |>
   dplyr::distinct(area, date, .keep_all = TRUE) |> # baltimore city comes through twice, I guess once as a county & once as a town
   dplyr::select(name = area, date, rate = unemployment_rate) |>
-  dplyr::mutate(name = stringr::str_replace(name, "^Baltimore$", "Baltimore City")) |>
+  dplyr::mutate(name = stringr::str_replace(name, "^Baltimore$", "Baltimore city")) |>
   dplyr::mutate(date = tsibble::yearmonth(date))
 
 unemp_adj <- fetch |>
@@ -13,6 +13,7 @@ unemp_adj <- fetch |>
 unemployment <- fabletools::components(unemp_adj) |>
   dplyr::select(name, date, reported_rate = rate, adjusted_rate = season_adjust) |>
   dplyr::mutate(date = as.Date(date)) |>
+  dplyr::mutate(dplyr::across(c(reported_rate, adjusted_rate), \(x) x / 100)) |>
   dplyr::as_tibble()
 
 usethis::use_data(unemployment, overwrite = TRUE)

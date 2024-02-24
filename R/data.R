@@ -143,7 +143,7 @@
 
 
 #' @title Monthly unemployment rates
-#' @description A dataset containing monthly unemployment rates from 2000 to 2023 for Maryland, Baltimore city, and surrounding counties. The data comes from the Bureau of Labor Statistics' Local Area Unemployment Statistics (LAUS).
+#' @description A dataset containing monthly unemployment rates from 2000 to 2023 for Maryland, Baltimore city, and all counties in the state. The data comes from the Bureau of Labor Statistics' Local Area Unemployment Statistics (LAUS).
 #' @format A data frame with `r nrow(unemployment)` rows and `r ncol(unemployment)` variables:
 #' \describe{
 #'   \item{name}{Character. The name of the location.}

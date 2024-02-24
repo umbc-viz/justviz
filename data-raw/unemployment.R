@@ -1,5 +1,4 @@
-fetch <- cwi::laus_trend(names = c("Maryland", "Baltimore", "Baltimore County", "Anne Arundel County", "Howard County"),
-                                startyear = 2000, endyear = 2023, state = "24") |>
+fetch <- cwi::laus_trend(startyear = 2000, endyear = 2023, state = "24") |>
   tidyr::unnest(c(unemployment_rate, unemployment, employment, labor_force)) |>
   dplyr::distinct(area, date, .keep_all = TRUE) |> # baltimore city comes through twice, I guess once as a county & once as a town
   dplyr::select(name = area, date, rate = unemployment_rate) |>

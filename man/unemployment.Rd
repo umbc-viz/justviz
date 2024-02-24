@@ -5,7 +5,7 @@
 \alias{unemployment}
 \title{Monthly unemployment rates}
 \format{
-A data frame with 1440 rows and 4 variables:
+A data frame with 9672 rows and 4 variables:
 \describe{
 \item{name}{Character. The name of the location.}
 \item{date}{Date. The month for which unemployment is reported.}
@@ -20,7 +20,7 @@ U.S. Bureau of Labor Statistics, Local Area Unemployment Statistics via API with
 unemployment
 }
 \description{
-A dataset containing monthly unemployment rates from 2000 to 2023 for Maryland, Baltimore city, and surrounding counties. The data comes from the Bureau of Labor Statistics' Local Area Unemployment Statistics (LAUS).
+A dataset containing monthly unemployment rates from 2000 to 2023 for Maryland, Baltimore city, and all counties in the state. The data comes from the Bureau of Labor Statistics' Local Area Unemployment Statistics (LAUS).
 }
 \examples{
  head(unemployment)

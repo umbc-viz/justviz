@@ -1,8 +1,17 @@
+# one of the steps in making cwi::laus_codes drops text after punctuation---should fix that
+# in the meantime, glue it back on
+county_patt <- c("^Baltimore$" = "Baltimore city",
+                 "Prince George" = "Prince George's County",
+                 "Queen Anne" = "Queen Anne's County",
+                 "St. Mary" = "St. Mary's County")
+counties <- cwi::laus_codes |>
+  dplyr::filter(type %in% c("A", "F"))
 fetch <- cwi::laus_trend(startyear = 2000, endyear = 2023, state = "24") |>
   tidyr::unnest(c(unemployment_rate, unemployment, employment, labor_force)) |>
   dplyr::distinct(area, date, .keep_all = TRUE) |> # baltimore city comes through twice, I guess once as a county & once as a town
+  dplyr::semi_join(counties, by = "area") |>
   dplyr::select(name = area, date, rate = unemployment_rate) |>
-  dplyr::mutate(name = stringr::str_replace(name, "^Baltimore$", "Baltimore city")) |>
+  dplyr::mutate(name = stringr::str_replace_all(name, county_patt)) |>
   dplyr::mutate(date = tsibble::yearmonth(date))
 
 unemp_adj <- fetch |>

@@ -5,7 +5,7 @@
 \alias{unemployment}
 \title{Monthly unemployment rates}
 \format{
-A data frame with 9672 rows and 4 variables:
+A data frame with 7200 rows and 4 variables:
 \describe{
 \item{name}{Character. The name of the location.}
 \item{date}{Date. The month for which unemployment is reported.}

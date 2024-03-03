@@ -57,6 +57,25 @@
 #' @source Centers for Disease Control and Prevention (CDC) PLACES Project. Data portal, definitions, and methodology are available at [https://www.cdc.gov/places/](https://www.cdc.gov/places/)
 "cdc"
 
+#' @title 2022-based CPI inflation adjustment factor
+#' @description A table of inflation adjustment factors for the year 1990 to 2022. This can be used to adjust dollar values for inflation into 2022 dollars, based on annual consumer price index (CPI) values from the Bureau of Labor Statistics. Match your values to `cpi` by year, then divide your values by the adjustment factor. Because these are annual averages, it won't be appropriate for more granular time periods in the past few years. This adjusts to 2022 dollars to match the `spending` dataset.
+#' @format A data frame with `r nrow(cpi)` rows and `r ncol(cpi)` variables:
+#' \describe{
+#'  \item{year}{Numeric. Year of data.}
+#'  \item{adj_factor22}{Numeric. Factor by which to adjust dollar amounts to get 2022-based dollars.}
+#' }
+#' @examples
+#'   head(cpi)
+#'
+#'   # to use cpi, join it to your data and divide values by the inflation factor
+#'   set.seed(1)
+#'   x <- data.frame(year = 2016:2022, value = round(rnorm(7, 100, 10)))
+#'   x |>
+#'     dplyr::left_join(cpi, by = "year") |>
+#'     dplyr::mutate(adj_value = value / adj_factor22)
+#' @source Bureau of Labor Statistics Consumer Price Index for All Urban Consumers (CPI-U) series CUUR0000SA0. [https://www.bls.gov/cpi/](https://www.bls.gov/cpi/)
+"cpi"
+
 
 #' @title EPA environmental justice index
 #' @description A dataset containing environmental health risk factors from the EPA's EJSCREEN environment justice index for census tracts in Maryland. Values are calculated based on aggregations of risk factors, then given as nationwide percentiles. Columns starting with `"d"` are adjusted for one of two different definitions of vulnerable populations.

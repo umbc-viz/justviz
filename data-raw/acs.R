@@ -126,7 +126,14 @@ acs <- out |>
   dplyr::mutate(level = forcats::as_factor(level))
 
 # diversity index
-acs$diversity_idx <- OasisR::HLoc(dplyr::select(acs, white:other_race))
+# diversity index--based on counts
+# acs$diversity_idx <- OasisR::HLoc(dplyr::select(acs, white:other_race))
+acs$diversity_idx <- out$race |>
+  dplyr::filter(!is.na(share)) |>
+  tidyr::pivot_wider(id_cols = name, names_from = group, values_from = estimate) |>
+  dplyr::ungroup() |>
+  dplyr::select(-name) |>
+  diversity()
 
 acs <- acs |>
   dplyr::relocate(diversity_idx, .before = foreign_born) |>

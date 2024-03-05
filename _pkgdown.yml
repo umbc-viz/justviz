@@ -7,6 +7,7 @@ reference:
   contents:
   - acs
   - cdc
+  - cpi
   - ejscreen
   - highways_sf
   - police_stops
@@ -19,6 +20,7 @@ reference:
   - youth_risks
 - title: "Functions"
   contents:
+  - diversity
   - jenks
   - round_sum100
 

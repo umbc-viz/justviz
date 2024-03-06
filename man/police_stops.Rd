@@ -11,7 +11,7 @@ A data frame with 13 rows and 5 variables:
 \item{category}{Factor. Category for which data are aggregated (total, gender, or race/ethnicity).}
 \item{group}{Factor. The group within the given category for which data are aggregated (Total, Male, Female, White, Black, Latino).}
 \item{ever_unfairly_stopped}{Numeric. The share of respondents who reported having ever been unfairly stopped, harassed, or abused by police.}
-\item{multiple_times_3yr}{Numeric. The share of respondents who reported this treatment having happened multiple times in the past 3 years.}
+\item{multiple_times_3yr}{Numeric. The share of respondents who reported this treatment having happened multiple times in the past 3 years, out of the share who reported it having happened ever.}
 }
 }
 \source{

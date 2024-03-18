@@ -3,32 +3,34 @@ template:
   bootstrap: 5
 
 reference:
-- title: "Datasets"
-  contents:
-  - acs
-  - cdc
-  - cpi
-  - ejscreen
-  - highways_sf
-  - police_stops
-  - spending
-  - tracts_sf
-  - unemployment
-  - vacant
-  - wages_by_puma
-  - wages
-  - youth_risks
-- title: "Functions"
-  contents:
-  - diversity
-  - jenks
-  - round_sum100
+  - title: "Datasets"
+    contents:
+      - acs
+      - cdc
+      - cpi
+      - ejscreen
+      - ej_natl
+      - ej_trend
+      - highways_sf
+      - police_stops
+      - spending
+      - tracts_sf
+      - unemployment
+      - vacant
+      - wages_by_puma
+      - wages
+      - youth_risks
+  - title: "Functions"
+    contents:
+      - diversity
+      - jenks
+      - round_sum100
 
 navbar:
   structure:
     left:
-    - intro
-    - reference
+      - intro
+      - reference
     right: github
   components:
     reference:

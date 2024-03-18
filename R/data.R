@@ -78,8 +78,8 @@
 
 
 #' @title EPA environmental justice index
-#' @description A dataset containing environmental health risk factors from the EPA's EJSCREEN environment justice index for census tracts in Maryland. Values are calculated based on aggregations of risk factors, then given as nationwide percentiles. Columns starting with `"d"` are adjusted for one of two different definitions of vulnerable populations.
-#' @format A data frame with `r nrow(ejscreen)` rows and `r ncol(ejscreen)` variables:
+#' @description A dataset containing environmental health risk factors from the EPA's EJSCREEN environment justice index for census tracts in Maryland. Values are calculated based on aggregations of risk factors, then given as percentiles. Columns starting with `"d"` are adjusted for one of two different definitions of vulnerable populations. The original dataset, `ejscreen`, was mistakenly described as the national percentiles, but is actually state-level percentiles, i.e. the percentiles of values _within the state of Maryland only_. To make nationwide percentiles available without breaking any code, the nationwide percentiles are in a separate dataframe called `ej_natl`. Both datasets have the same format.
+#' @format For both `ejscreen` and `ej_natl`, a data frame with `r nrow(ejscreen)` rows and `r ncol(ejscreen)` variables:
 #' \describe{
 #'   \item{tract}{Character. The tract FIPS code.}
 #'   \item{indicator}{Factor. The environmental health risk factor, such as proximity to water treatment or air pollution-related cancers.}
@@ -88,9 +88,30 @@
 #'   \item{d5_ptile}{Integer. The percentile of indexed values scaled based on a five-factor demographic index (percent low-income, unemployment rate, percent limited English, percent without high school diploma, low life expectancy).}
 #' }
 #' @examples
-#'  head(ejscreen)
+#' head(ejscreen)
 #' @source Environmental Protection Agency (EPA) EJSCREEN Environment Justice Index. Data portal, definitions, and methodology are available at [https://www.epa.gov/ejscreen/technical-information-about-ejscreen](https://www.epa.gov/ejscreen/technical-information-about-ejscreen)
 "ejscreen"
+
+#' @rdname ejscreen
+"ej_natl"
+
+
+#' @title EPA environmental justice index trend
+#' @description A dataset containing environmental health risk factors from the EPA's EJSCREEN environment justice index for block groups in Maryland for each year from 2018 to 2023. Values are calculated based on aggregations of risk factors, then given as nationwide percentiles. The column `d2_ptile` is adjusted for the EPA's two-factor definition of vulneration populations. While different years of this data are formatted differently, all indicators subset here are consistent except for underground storage, which is only available starting in 2021. Note also that block group definitions and their GEOIDs changed with the 2020 decennial census: 2018 to 2021 use 2010 block groups, while 2022 and 2023 use 2020 block groups. If joining with shapefiles from TIGER or elsewhere, you'll need one for 2010 block groups and one for 2020.
+#' @seealso ejscreen
+#' @format A data frame with `r nrow(ej_trend)` rows and `r ncol(ej_trend)` variables:
+#' \describe{
+#'    \item{year}{Numeric. Year of data.}
+#'    \item{bg}{Character. The block group FIPS code.}
+#'    \item{total_pop}{Numeric. Total population of the block group that year.}
+#'    \item{indicator}{Factor. The environmental health risk factor, such as proximity to water treatment or air pollution-related cancers.}
+#'   \item{value_ptile}{Integer. The nationwide percentile of indexed values.}
+#'   \item{d2_ptile}{Integer. The percentile of indexed values scaled based on a two-factor demographic index (percent low-income and percent people of color).}
+#' }
+#' @examples
+#' head(ej_trend)
+#' @source Environmental Protection Agency (EPA) EJSCREEN Environment Justice Index. Data portal, definitions, and methodology are available at [https://www.epa.gov/ejscreen/technical-information-about-ejscreen](https://www.epa.gov/ejscreen/technical-information-about-ejscreen)
+"ej_trend"
 
 
 #' @title Shapefile of highways
@@ -177,12 +198,13 @@
 
 
 #' @title Vacancy rates and correlated housing measures
-#' @description A dataset containing vacancy rates and other values related to housing for tracts in Baltimore; Stamford, CT; and New Haven, CT. The data comes from the 2022 American Community Survey (ACS).
+#' @description A dataset containing vacancy rates and other values related to housing for tracts in Baltimore; Stamford, CT; and New Haven, CT. The data comes from the 2022 American Community Survey (ACS). This was updated to include all tracts in Maryland, though Maryland tracts not in Baltimore city will have `NA` in the city column.
 #' @format A data frame with `r nrow(vacant)` rows and `r ncol(vacant)` variables:
 #' \describe{
 #'   \item{state}{Character. The state FIPS code.}
 #'   \item{city}{Character. The city name.}
 #'   \item{county}{Character. The 3-digit county FIPS code.}
+#'   \item{county_name}{Character. Full county name.}
 #'   \item{geoid}{Character. The tract FIPS code.}
 #'   \item{total_units}{Numeric. The total number of housing units.}
 #'   \item{vacants}{Numeric. The number of vacant housing units.}

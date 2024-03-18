@@ -5,11 +5,12 @@
 \alias{vacant}
 \title{Vacancy rates and correlated housing measures}
 \format{
-A data frame with 264 rows and 11 variables:
+A data frame with 1529 rows and 12 variables:
 \describe{
 \item{state}{Character. The state FIPS code.}
 \item{city}{Character. The city name.}
 \item{county}{Character. The 3-digit county FIPS code.}
+\item{county_name}{Character. Full county name.}
 \item{geoid}{Character. The tract FIPS code.}
 \item{total_units}{Numeric. The total number of housing units.}
 \item{vacants}{Numeric. The number of vacant housing units.}
@@ -27,7 +28,7 @@ Calculated from US Census Bureau. American Community Survey 2022 5-year estimate
 vacant
 }
 \description{
-A dataset containing vacancy rates and other values related to housing for tracts in Baltimore; Stamford, CT; and New Haven, CT. The data comes from the 2022 American Community Survey (ACS).
+A dataset containing vacancy rates and other values related to housing for tracts in Baltimore; Stamford, CT; and New Haven, CT. The data comes from the 2022 American Community Survey (ACS). This was updated to include all tracts in Maryland, though Maryland tracts not in Baltimore city will have \code{NA} in the city column.
 }
 \examples{
  head(vacant)

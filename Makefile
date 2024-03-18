@@ -45,10 +45,17 @@ clean:
 data/%.rda: data-raw/%.R
 	$(SRC)
 
-data-raw/files/ejscreen_md.csv: data-raw/prep_ejscreen.sh
+data-raw/files/ejscreen_md_%.csv: data-raw/prep_ejscreen.sh
 	$(RUN_BASH)
 
-data/ejscreen.rda: data-raw/files/ejscreen_md.csv
+data/ejscreen.rda: data-raw/files/ejscreen_md_state.csv
+
+data/ej_natl.rda: data-raw/files/ejscreen_md_natl.csv
+
+data/ej_trend.rda: data-raw/files/ej_trend.duckdb
+
+data-raw/files/ej_trend.duckdb: data-raw/prep_ej_trend.sh
+	$(RUN_BASH)
 
 data/wages.rda: data-raw/files/income_tbls.rds
 

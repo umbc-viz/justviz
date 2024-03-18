@@ -6,3 +6,6 @@ docs
 
 make_logo.R
 dag.png
+**/*.duckdb
+**/*.zip
+data-raw/files/ej_trend

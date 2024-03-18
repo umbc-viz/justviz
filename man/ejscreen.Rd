@@ -3,9 +3,10 @@
 \docType{data}
 \name{ejscreen}
 \alias{ejscreen}
+\alias{ej_natl}
 \title{EPA environmental justice index}
 \format{
-A data frame with 19175 rows and 5 variables:
+For both \code{ejscreen} and \code{ej_natl}, a data frame with 19175 rows and 5 variables:
 \describe{
 \item{tract}{Character. The tract FIPS code.}
 \item{indicator}{Factor. The environmental health risk factor, such as proximity to water treatment or air pollution-related cancers.}
@@ -13,17 +14,21 @@ A data frame with 19175 rows and 5 variables:
 \item{d2_ptile}{Integer. The percentile of indexed values scaled based on a two-factor demographic index (percent low-income and percent people of color).}
 \item{d5_ptile}{Integer. The percentile of indexed values scaled based on a five-factor demographic index (percent low-income, unemployment rate, percent limited English, percent without high school diploma, low life expectancy).}
 }
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19175 rows and 5 columns.
 }
 \source{
 Environmental Protection Agency (EPA) EJSCREEN Environment Justice Index. Data portal, definitions, and methodology are available at \url{https://www.epa.gov/ejscreen/technical-information-about-ejscreen}
 }
 \usage{
 ejscreen
+
+ej_natl
 }
 \description{
-A dataset containing environmental health risk factors from the EPA's EJSCREEN environment justice index for census tracts in Maryland. Values are calculated based on aggregations of risk factors, then given as nationwide percentiles. Columns starting with \code{"d"} are adjusted for one of two different definitions of vulnerable populations.
+A dataset containing environmental health risk factors from the EPA's EJSCREEN environment justice index for census tracts in Maryland. Values are calculated based on aggregations of risk factors, then given as percentiles. Columns starting with \code{"d"} are adjusted for one of two different definitions of vulnerable populations. The original dataset, \code{ejscreen}, was mistakenly described as the national percentiles, but is actually state-level percentiles, i.e. the percentiles of values \emph{within the state of Maryland only}. To make nationwide percentiles available without breaking any code, the nationwide percentiles are in a separate dataframe called \code{ej_natl}. Both datasets have the same format.
 }
 \examples{
- head(ejscreen)
+head(ejscreen)
 }
 \keyword{datasets}

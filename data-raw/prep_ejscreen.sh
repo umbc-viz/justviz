@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
-url="https://gaftp.epa.gov/EJScreen/2023/2.22_September_UseMe/EJSCREEN_2023_Tracts_StatePct_with_AS_CNMI_GU_VI.csv.zip"
 filedir="data-raw/files"
-csvfile="ejscreen_md.csv"
-zipfile="$csvfile.zip"
-curl -L $url -o "$filedir/$zipfile"
-unzip -p "$filedir/$zipfile" | \
+
+stateurl="https://gaftp.epa.gov/EJScreen/2023/2.22_September_UseMe/EJSCREEN_2023_Tracts_StatePct_with_AS_CNMI_GU_VI.csv.zip"
+statecsv="ejscreen_md_state.csv"
+statezip="$statecsv.zip"
+
+natlurl="https://gaftp.epa.gov/EJScreen/2023/2.22_September_UseMe/EJSCREEN_2023_Tracts_with_AS_CNMI_GU_VI.csv.zip"
+natlcsv="ejscreen_md_natl.csv"
+natlzip="$natlcsv.zip"
+
+# define a function getmd
+getmd() {
+  url=$1
+  zipfile=$2
+  csvfile=$3
+  curl -L $url -o "$filedir/$zipfile"
+  unzip -p "$filedir/$zipfile" | \
   csvsql --tables "ejscreen" --no-inference --query "
     SELECT ID, ACSTOTPOP, DEMOGIDX_2, DEMOGIDX_5, 
       P_PM25, P_D2_PM25, P_D5_PM25,
@@ -22,4 +33,8 @@ unzip -p "$filedir/$zipfile" | \
       P_PWDIS, P_D2_PWDIS, P_D5_PWDIS
     FROM ejscreen
     WHERE ST_ABBREV = 'MD'" > "$filedir/$csvfile"
-rm "$filedir/$zipfile"
+  rm "$filedir/$zipfile"
+}
+
+getmd $stateurl $statezip $statecsv
+getmd $natlurl $natlzip $natlcsv

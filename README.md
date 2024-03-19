@@ -4,6 +4,10 @@
 # justviz <a href="https://umbc-viz.github.io/justviz/"><img src="man/figures/logo.png" align="right" height="140" alt="justviz website" /></a>
 
 <!-- badges: start -->
+
+\[1\]
+“[![](https://img.shields.io/badge/devel%20version-0.2.0-#0099ff.svg)](https://github.com/umbc-viz/justviz)”
+
 <!-- badges: end -->
 
 This is a small package for resources for UMBC’s GES 778, a graduate

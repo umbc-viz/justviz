@@ -5,7 +5,7 @@
 \alias{youth_risks}
 \title{Predictions of youth risks in Connecticut}
 \format{
-A data frame with \code{nrow(youth_risks)} rows and \code{ncol(youth_risks)} variables:
+A data frame with 450 rows and 6 variables:
 \describe{
 \item{code}{Character. The code for the question.}
 \item{question}{Character. The question about the predicted outcome for youth.}

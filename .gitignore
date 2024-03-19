@@ -3,9 +3,11 @@
 .RData
 .Ruserdata
 docs
+pkgdown
 
 make_logo.R
 dag.png
 **/*.duckdb
 **/*.zip
 data-raw/files/ej_trend
+data-raw/files/nhgis_blk2010_blk2020_ge_24.csv

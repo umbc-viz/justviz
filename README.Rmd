@@ -16,11 +16,6 @@ knitr::opts_chunk$set(
 # justviz <a href="https://umbc-viz.github.io/justviz/"><img src="man/figures/logo.png" align="right" height="140" alt="justviz website" /></a>
 
 <!-- badges: start -->
-
-```{r, echo = FALSE, results="asis"}
-badger::badge_devel(color = "#0099ff")
-```
-
 <!-- badges: end -->
 
 This is a small package for resources for UMBC's GES 778, a graduate class on data visualization. It's an easy way to distribute datasets and a few utility functions for the class, and provides a space for students to contribute code.

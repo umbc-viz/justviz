@@ -1,7 +1,7 @@
 Package: justviz
 Type: Package
 Title: justviz visualization tools
-Version: 0.2.1
+Version: 0.2.2
 Description: Datasets and helper functions for UMBC's GES 778, data visualization.
 Encoding: UTF-8
 LazyData: true

@@ -5,7 +5,7 @@
 \alias{highways_sf}
 \title{Shapefile of highways}
 \format{
-An sf data frame with 7540 rows and 4 variables:
+An sf data frame with 7504 rows and 4 variables:
 \describe{
 \item{osm_id}{Character. The OpenStreetMap ID for the highway; can be used to retrieve more metadata.}
 \item{name}{Character. The name of the highway, if labeled in the OSM database.}

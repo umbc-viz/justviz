@@ -41,6 +41,53 @@
 "acs"
 
 
+#' @title Public art in Baltimore
+#' @description
+#' A spatial points dataset of public art in and near Baltimore city. This comes from the city's open data portal. Some projects appear to be inside of buildings and therefore not visible from the outside, but much of this metadata is incomplete. Several art projects without coordinates included, or with coordinates outside of Baltimore city, Baltimore County, and Anne Arundel County were dropped.
+#' @format An sf data frame with `r nrow(art_sf)` rows and `r ncol(art_sf)` variables:
+#' \describe{
+#'   \item{id}{Integer. An ID, identical to the object ID in the original dataset.}
+#'   \item{county}{Character. County name where art is located.}
+#'   \item{artist_last_name}{Character. Last name(s) of the artist(s).}
+#'   \item{artist_first_name}{Character. First name(s) of the artist(s).}
+#'   \item{title}{Character. Artwork title.}
+#'   \item{date}{Character. Year of artwork, including some spans of multiple years.}
+#'   \item{medium}{Character. Medium of artwork.}
+#'   \item{location}{Character. Name of location or address.}
+#'   \item{site}{Character. Description of location where art is situated.}
+#'   \item{visibility}{Character. Description of level of visibility to public. This variable is very sparsely populated.}
+#'   \item{access}{Character. Description of public access. This variable is very sparsely populated.}
+#'   \item{geometry}{POINT. Location.}
+#' }
+#' @examples
+#'  head(art_sf)
+#' @source Open Baltimore data portal. Public Art Inventory, available at [https://data.baltimorecity.gov/datasets/baltimore::public-art-inventory](https://data.baltimorecity.gov/datasets/baltimore::public-art-inventory)
+"art_sf"
+
+
+#' @title Brownfields and national priority sites
+#' @description
+#' A `sf` data frame of basic information on brownfields and national priority list (superfund) sites in Maryland. This is a subset of data from the Maryland Department of the Environment's (MDE) Land Restoration Program, filtered for sites that are listed as brownfields, NPL sites, or both.
+#' @format An sf data frame with `r nrow(brownfields_sf)` rows and `r ncol(brownfields_sf)` variables:
+#' \describe{
+#'   \item{id}{Integer. An ID, identical to the object ID in the original dataset.}
+#'   \item{name}{Character. Site name listed in the MDE database.}
+#'   \item{address}{Character. Site address(es).}
+#'   \item{city}{Character. Town name.}
+#'   \item{is_ongoing_assess}{Logical, whether assessment of the site is listed as ongoing.}
+#'   \item{is_ongoing_remed}{Logical, whether remediation of the site is listed as ongoing.}
+#'   \item{is_archived}{Logical, whether the site is considered closed.}
+#'   \item{fy_open}{Numeric. Fiscal year cleanup process was opened.}
+#'   \item{fy_closed}{Numeric. Fiscal year cleanup process was closed, if applicable.}
+#'   \item{site_type}{Factor. The site type (brownfield, npl, or both).}
+#'   \item{geometry}{POINT. Location.}
+#' }
+#' @examples
+#' head(brownfields_sf)
+#' @source Maryland Department of the Environment Land Restoration Program, available at [https://mdewin64.mde.state.md.us/LRP/index.html](https://mdewin64.mde.state.md.us/LRP/index.html)
+"brownfields_sf"
+
+
 #' @title Adult health data from the CDC
 #' @description A dataset containing health indicators from the CDC's PLACES project for the US, Maryland, and the state's counties and census tracts. Where tract-level data couldn't be directly measured, values are modeled. This is the most recent data from the 2023 update. The denominator for all variables is the population of adults ages 18 and older, except missing health insurance, which is based on adults ages 18 to 64.
 #' @format A data frame with `r nrow(cdc)` rows and `r ncol(cdc)` variables:
@@ -127,6 +174,23 @@
 #'  head(highways_sf)
 #' @source OpenStreetMap database via the [`osmdata`](https://github.com/ropensci/osmdata) package.
 "highways_sf"
+
+
+#' @title Shapefile of nonresidential areas
+#' @description
+#' An `sf` object of data from OpenStreetMap of large nonresidential areas in Maryland. There are several census tracts with very few households that coincide with industrial sites, prisons, and other nonresidential properties, and this is an attempt to identify some of them.
+#' @format An sf data frame with `r nrow(nonres_sf)` rows and `r ncol(nonres_sf)` variables:
+#' \describe{
+#'   \item{type}{Factor. Site type: one of airport, industrial, military, prison, or protected area. These refer to the keys used to retrieve data from OSM, though some may have matched multiple keys (duplicates were removed).}
+#'   \item{osm_id}{Character. The OpenStreetMap ID for the site; can be uesd to retrieve more metadata.}
+#'   \item{name}{Character. The name of the site.}
+#'   \item{geometry}{POLYGON. The boundaries of the site.}
+#'   \item{is_low_res}{Logical. Gives whether the site intersects with a low-residential tract, defined as tracts with fewer than 500 households based on the 2022 ACS.}
+#' }
+#' @examples
+#' head(nonres_sf)
+#' @source OpenStreetMap database via the [`osmdata`](https://github.com/ropensci/osmdata) package, and American Community Survey 2022 5-year estimates via [`tidycensus`](https://github.com/walkerke/tidycensus).
+"nonres_sf"
 
 
 #' @title Police stops in Connecticut
@@ -261,6 +325,7 @@
 #' @source U.S. Census Bureau, American Community Survey, Integrated Public Use Microdata Series [https://usa.ipums.org/usa/](https://usa.ipums.org/usa/). Analyzed using the [`srvyr`](https://github.com/gergness/srvyr) package.
 "wages"
 
+
 #' @title 2010 to 2020 tract crosswalk
 #' @description
 #' The Census Bureau updates the boundaries of its geographies, such as tracts, after every decennial census. To convert values based on one year's geographies to another year's geographies, you need what's called a crosswalk, or a table of weights to use for averaging values. Unfortunately, many results of the 2020 census were delayed, so some datasets are still put out with 2010 geographies, while others have updated to 2020. The CDC Places data still uses 2010 boundaries, so if you want to merge data from `cdc` to data from any of the other tract-level datasets, you'll need to use this crosswalk. See the example below.
@@ -305,6 +370,7 @@
 #'   inner_join(asthma20, by = "tract20")
 #' @source Block-to-block crosswalk from IPUMS NHGIS, University of Minnesota, www.nhgis.org.
 "xwalk_tract_10_to_20"
+
 
 #' @title Predictions of youth risks in Connecticut
 #' @description A dataset containing Likert-style responses to questions about different outcomes for youth in their area, from the 2021 DataHaven Community Wellbeing Survey. The data is broken down by category, group, and response with values for adults in Connecticut.

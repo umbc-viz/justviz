@@ -16,6 +16,12 @@
     <loc>https://umbc-viz.github.io/justviz/reference/acs.html</loc>
   </url>
   <url>
+    <loc>https://umbc-viz.github.io/justviz/reference/art_sf.html</loc>
+  </url>
+  <url>
+    <loc>https://umbc-viz.github.io/justviz/reference/brownfields_sf.html</loc>
+  </url>
+  <url>
     <loc>https://umbc-viz.github.io/justviz/reference/cdc.html</loc>
   </url>
   <url>
@@ -38,6 +44,9 @@
   </url>
   <url>
     <loc>https://umbc-viz.github.io/justviz/reference/jenks.html</loc>
+  </url>
+  <url>
+    <loc>https://umbc-viz.github.io/justviz/reference/nonres_sf.html</loc>
   </url>
   <url>
     <loc>https://umbc-viz.github.io/justviz/reference/police_stops.html</loc>

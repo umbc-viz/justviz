@@ -6,6 +6,8 @@ reference:
   - title: "Datasets"
     contents:
       - acs
+      - art_sf
+      - brownfields_sf
       - cdc
       - cpi
       - ejscreen

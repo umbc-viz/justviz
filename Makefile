@@ -10,10 +10,11 @@ R_CMD = R -q -e
 SRC = $(R_CMD) "devtools::load_all(); source('$<')"
 RUN_BASH = bash $<
 
-.PHONY: all check document vignettes install clean datasets readme
+.PHONY: all check document vignettes install clean datasets rasters readme
 datasets := $(patsubst data-raw/%.R,data/%.rda,$(wildcard data-raw/*.R))
+rasters := $(wildcard inst/raster/*.tif)
 
-all: $(datasets) document check readme
+all: $(datasets) $(rasters) document check readme
 
 
 ############################# UTILS
@@ -43,6 +44,9 @@ clean:
 ############################# DATASETS
 
 data/%.rda: data-raw/%.R
+	$(SRC)
+
+inst/raster/%.tif: data-raw/%.R
 	$(SRC)
 
 data-raw/files/ejscreen_md_%.csv: data-raw/prep_ejscreen.sh

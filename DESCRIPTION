@@ -10,6 +10,7 @@ Depends:
 Imports: 
     classInt,
     cli,
+    terra
 Suggests: 
     sf,
     camiller (>= 0.2.3),
@@ -29,7 +30,8 @@ Suggests:
     tidycensus,
     tidyr,
     tigris,
-    tsibble
+    tsibble,
+    FedData
 Remotes: 
     CT-Data-Haven/cwi,
     camille-s/camiller

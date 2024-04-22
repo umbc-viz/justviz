@@ -2,5 +2,6 @@
 
 export(diversity)
 export(jenks)
+export(load_land_cover)
 export(round_sum100)
 import(cli)

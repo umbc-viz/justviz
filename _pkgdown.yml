@@ -28,6 +28,7 @@ reference:
     contents:
       - diversity
       - jenks
+      - load_land_cover
       - round_sum100
 
 navbar:

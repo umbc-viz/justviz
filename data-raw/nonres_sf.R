@@ -1,7 +1,7 @@
 # had to switch API URL to https://overpass-api.de/api/interpreter
 # keep ones in low-residential tracts
 osmdata::set_overpass_url("https://overpass-api.de/api/interpreter")
-counties <- tigris::counties(state = "24", cb = TRUE) |>
+counties <- tigris::counties(state = "24", cb = FALSE) |>
   sf::st_union()
 bb <- sf::st_bbox(counties)
 all_hh <- tidycensus::get_acs("tract", variables = "B25003_001", year = 2022, state = "24", geometry = TRUE) |>
@@ -53,11 +53,12 @@ nonres_sf <- sf::st_intersection(nonres_sf, sf::st_transform(counties, 2248))
 nonres_sf$area <- sf::st_area(nonres_sf$geometry)
 nonres_sf$area <- measurements::conv_unit(nonres_sf$area, "ft2", "mi2")
 nonres_sf$area <- as.numeric(nonres_sf$area)
-nonres_sf <- dplyr::distinct(nonres_sf, .keep_all = TRUE)
-nonres_sf <- sf::st_cast(nonres_sf, "POLYGON")
+nonres_sf <- dplyr::distinct(nonres_sf, osm_id, .keep_all = TRUE)
+# nonres_sf <- sf::st_cast(nonres_sf, "POLYGON")
 nonres_sf <- dplyr::filter(nonres_sf, area > 0.2)
 nonres_sf$type <- as.factor(nonres_sf$type)
 nonres_sf$area <- NULL
+# nonres_sf <- sf::st_filter(nonres_sf, sf::st_transform(counties, sf::st_crs(nonres_sf)))
 
 nonres_sf$is_low_res <- lengths(sf::st_intersects(nonres_sf, low_res)) > 0
 nonres_sf$name <- stringr::str_replace_all(nonres_sf$name, "’", "'")

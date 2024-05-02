@@ -5,7 +5,7 @@
 \alias{nonres_sf}
 \title{Shapefile of nonresidential areas}
 \format{
-An sf data frame with 513 rows and 5 variables:
+An sf data frame with 514 rows and 5 variables:
 \describe{
 \item{type}{Factor. Site type: one of airport, industrial, military, prison, or protected area. These refer to the keys used to retrieve data from OSM, though some may have matched multiple keys (duplicates were removed).}
 \item{osm_id}{Character. The OpenStreetMap ID for the site; can be uesd to retrieve more metadata.}

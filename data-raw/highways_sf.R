@@ -1,16 +1,24 @@
 osmdata::set_overpass_url("https://overpass-api.de/api/interpreter")
 counties <- tigris::counties(state = "24", cb = TRUE) |>
-  dplyr::filter(NAMELSAD %in% c("Baltimore County", "Baltimore city", "Anne Arundel County", "Howard County"))
+    dplyr::filter(
+        NAMELSAD %in%
+            c(
+                "Baltimore County",
+                "Baltimore city",
+                "Anne Arundel County",
+                "Howard County"
+            )
+    )
 
 
 bb <- sf::st_bbox(counties)
 road_types <- c("motorway", "trunk")
 highways <- osmdata::opq(bbox = bb) |>
-  osmdata::add_osm_feature(key = "highway", value = road_types) |>
-  osmdata::osmdata_sf()
+    osmdata::add_osm_feature(key = "highway", value = road_types) |>
+    osmdata::osmdata_sf()
 highways_sf <- highways$osm_lines |>
-  dplyr::select(osm_id, name, lanes) |>
-  dplyr::mutate(lanes = as.numeric(lanes))
+    dplyr::select(osm_id, name, lanes) |>
+    dplyr::mutate(lanes = as.numeric(lanes))
 
 row.names(highways_sf) <- NULL
 

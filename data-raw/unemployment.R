@@ -23,7 +23,6 @@ unemployment <- cwi::laus_trend(
     dplyr::semi_join(counties, by = "area") |>
     dplyr::select(name = area, date, rate = unemployment_rate) |>
     dplyr::mutate(name = stringr::str_replace_all(name, county_patt)) |>
-    dplyr::mutate(date = tsibble::yearmonth(date)) |>
     dplyr::mutate(rate = rate / 100)
 
 usethis::use_data(unemployment, overwrite = TRUE)

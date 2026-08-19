@@ -52,17 +52,7 @@ ej_natl <- ej_read |>
         !is.na(pop),
         pop > 0
     ) |>
-    dplyr::select(-p_d5) |>
-    tidyr::pivot_longer(
-        -geoid:-indicator,
-        names_to = c(NA, "type"),
-        names_pattern = "^(p)_?(d\\d)?",
-        values_to = "ptile"
-    ) |>
-    dplyr::mutate(
-        type = forcats::as_factor(type) |>
-            forcats::fct_recode(unadjusted = "", adjusted = "d2")
-    ) |>
+    dplyr::rename(value_ptile = p, d2_ptile = p_d2, d5_ptile = p_d5) |>
     dplyr::mutate(
         indicator = forcats::fct_recode(
             indicator,
@@ -77,12 +67,6 @@ ej_natl <- ej_read |>
             drinking_water = "dwater",
             toxic_air_release = "rsei_air"
         )
-    ) |>
-    tidyr::pivot_wider(
-        id_cols = c(geoid, pop, indicator),
-        names_from = type,
-        values_from = ptile,
-        names_glue = "{type}_{.value}"
     )
 
 usethis::use_data(ej_natl, overwrite = TRUE)

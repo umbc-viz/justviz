@@ -16,10 +16,10 @@
 #' @seealso [`FedData::get_nlcd`]
 #'
 load_land_cover <- function(type = c("canopy", "impervious")) {
-  match.arg(type)
-  fn <- paste(type, "tif", sep = ".")
-  path <- system.file("raster", fn, package = "justviz")
-  r <- terra::rast(path)
-  r <- round(r / 255, digits = 2)
-  r
+    match.arg(type)
+    fn <- paste(type, "tif", sep = ".")
+    path <- system.file("raster", fn, package = "justviz")
+    r <- terra::rast(path)
+    r <- round(r / 255, digits = 2)
+    r
 }

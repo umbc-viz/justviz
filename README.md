@@ -1,9 +1,11 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+<!-- README.md is generated from README.qmd. Please edit that file -->
 
 # justviz <a href="https://umbc-viz.github.io/justviz/"><img src="man/figures/logo.png" align="right" height="140" alt="justviz website" /></a>
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 This is a small package for resources for UMBC’s GES 778, a graduate

@@ -3,22 +3,21 @@
 \docType{data}
 \name{spending}
 \alias{spending}
-\title{Average annual consumer spending}
+\title{Average annual consumer spending, 2024}
 \format{
-A data frame with 202 rows and 12 variables:
+A data frame with 101 rows and 11 variables:
 \describe{
-\item{year}{Numeric. The year of the survey.}
 \item{item}{Character. The category of goods.}
+\item{l2}{Character. The second level category of the item. \code{NA} if not applicable.}
+\item{l3}{Character. The third level category of the item. \code{NA} if not applicable.}
+\item{l4}{Character. The fourth level category of the item. \code{NA} if not applicable.}
+\item{l5}{Character. The fifth level category of the item. \code{NA} if not applicable.}
 \item{qtotal}{Numeric. The mean amount spent on the item by all households.}
 \item{q1}{Numeric. The mean amount spent on the item by households in the first (lowest) income quintile.}
 \item{q2}{Numeric. The mean amount spent on the item by households in the second income quintile.}
 \item{q3}{Numeric. The mean amount spent on the item by households in the third income quintile.}
 \item{q4}{Numeric. The mean amount spent on the item by households in the fourth income quintile.}
 \item{q5}{Numeric. The mean amount spent on the item by households in the fifth (highest) income quintile.}
-\item{l2}{Character. The second level category of the item. \code{NA} if not applicable.}
-\item{l3}{Character. The third level category of the item. \code{NA} if not applicable.}
-\item{l4}{Character. The fourth level category of the item. \code{NA} if not applicable.}
-\item{l5}{Character. The fifth level category of the item. \code{NA} if not applicable.}
 }
 }
 \source{

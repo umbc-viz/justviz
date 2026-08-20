@@ -52,7 +52,13 @@ ej_natl <- ej_read |>
         !is.na(pop),
         pop > 0
     ) |>
-    dplyr::rename(value_ptile = p, d2_ptile = p_d2, d5_ptile = p_d5) |>
+    dplyr::rename(
+        value_ptile = p,
+        d2_ptile = p_d2,
+        d5_ptile = p_d5,
+        tract = geoid
+    ) |>
+    dplyr::select(-pop) |>
     dplyr::mutate(
         indicator = forcats::fct_recode(
             indicator,

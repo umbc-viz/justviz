@@ -5,7 +5,7 @@
 \alias{cdc}
 \title{Adult health data from the CDC}
 \format{
-A data frame with 14140 rows and 6 variables:
+A data frame with 14840 rows and 6 variables:
 \describe{
 \item{level}{Factor. The level of the data (us, state, etc.).}
 \item{year}{Character. The year the data was collected.}
@@ -22,7 +22,7 @@ Centers for Disease Control and Prevention (CDC) PLACES Project. Data portal, de
 cdc
 }
 \description{
-A dataset containing health indicators from the CDC's PLACES project for the US, Maryland, and the state's counties and census tracts. Where tract-level data couldn't be directly measured, values are modeled. This is the most recent data from the 2023 update. The denominator for all variables is the population of adults ages 18 and older, except missing health insurance, which is based on adults ages 18 to 64.
+A dataset containing health indicators from the CDC's PLACES project for the US, Maryland, and the state's counties and census tracts. Where tract-level data couldn't be directly measured, values are modeled. This is the most recent data from the 2025 update. The denominator for all variables is the population of adults ages 18 and older, except missing health insurance, which is based on adults ages 18 to 64.
 }
 \examples{
  head(cdc)

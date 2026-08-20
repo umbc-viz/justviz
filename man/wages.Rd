@@ -5,23 +5,20 @@
 \alias{wages}
 \title{Median wages by demographic}
 \format{
-A data frame with 309 rows and 15 variables:
+A data frame with 59 rows and 12 variables:
 \describe{
 \item{dimension}{Factor. The dimension across which values are calculated.}
-\item{name}{Factor. The name of the region (US or Maryland).}
+\item{status}{Factor. Worker status: all workers, full-time workers, or part-time workers. Some groups are only available for full-time workers.}
 \item{sex}{Factor. The sex of the individuals.}
 \item{race_eth}{Factor. The race/ethnicity of the individuals.}
 \item{edu}{Factor. The education level of the individuals.}
-\item{occ_group}{Factor. The occupation group of the individuals.}
-\item{univ}{Factor. Universe of workers, whether the denominator is all workers or full-time only.}
-\item{is_fulltime}{Logical. Whether the individual is a full-time worker. \code{NA} if distinction isn't included.}
-\item{count}{Numeric. The number of individuals in the group.}
+\item{count}{Numeric. The estimated number of individuals in the group.}
+\item{sample_n}{Numeric. The sample size used for estimates.}
 \item{earn_q20}{Numeric. The 20th percentile of earnings.}
 \item{earn_q25}{Numeric. The 25th percentile of earnings.}
 \item{earn_q50}{Numeric. The 50th percentile (median) earnings.}
 \item{earn_q75}{Numeric. The 75th percentile of earnings.}
 \item{earn_q80}{Numeric. The 80th percentile of earnings.}
-\item{sample_n}{Numeric. The sample size.}
 }
 }
 \source{
@@ -31,7 +28,7 @@ U.S. Census Bureau, American Community Survey, Integrated Public Use Microdata S
 wages
 }
 \description{
-A dataset containing median individual earnings by various dimensions (education, occupation, etc.) for the US and Maryland, for adults ages 25 and up with positive earnings. The data is calculated from the 2021 American Community Survey (ACS) Public Use Microdata Sample (PUMS) data via the Integrated Public Use Microdata Series (IPUMS).
+A dataset containing median individual earnings by various dimensions (sex, race, education, etc.) for Maryland, for adults ages 25 and up with positive earnings. The data is calculated from the 2024 American Community Survey (ACS) Public Use Microdata Sample (PUMS) data via the Integrated Public Use Microdata Series (IPUMS).
 }
 \examples{
  head(wages)

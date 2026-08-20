@@ -1,17 +1,17 @@
 ---
-output: github_document
+format: gfm
+knitr:
+  opts_chunk:
+    comment: "#>"
+    collapse: true
+    fig-path: "man/figures/README-"
+execute:
+  warning: false
+  message: true
+fig-dpi: 150
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
+<!-- README.md is generated from README.qmd. Please edit that file -->
 
 # justviz <a href="https://umbc-viz.github.io/justviz/"><img src="man/figures/logo.png" align="right" height="140" alt="justviz website" /></a>
 

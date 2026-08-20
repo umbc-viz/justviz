@@ -9,5 +9,5 @@ Makefile
 ^pkgdown$
 ^\.github$
 
-R/percentage.R
-R/dollar.R
+^\.vscode$
+^[.]?air[.]toml$

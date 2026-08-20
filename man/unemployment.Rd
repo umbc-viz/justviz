@@ -5,22 +5,21 @@
 \alias{unemployment}
 \title{Monthly unemployment rates}
 \format{
-A data frame with 7200 rows and 4 variables:
+A data frame with 7800 rows and 3 variables:
 \describe{
 \item{name}{Character. The name of the location.}
 \item{date}{Date. The month for which unemployment is reported.}
-\item{reported_rate}{Numeric. The reported unemployment rate.}
-\item{adjusted_rate}{Numeric. The seasonally adjusted unemployment rate.}
+\item{rate}{Numeric. The reported unemployment rate.}
 }
 }
 \source{
-U.S. Bureau of Labor Statistics, Local Area Unemployment Statistics via API with the \href{https://github.com/CT-Data-Haven/cwi}{\code{cwi}} package. \url{https://www.bls.gov/lau/} Seasonal adjustment is done with the BLS' methodology via \code{\link[feasts:X_13ARIMA_SEATS]{feasts::X_13ARIMA_SEATS}}.
+U.S. Bureau of Labor Statistics, Local Area Unemployment Statistics via API with the \href{https://github.com/CT-Data-Haven/cwi}{\code{cwi}} package. \url{https://www.bls.gov/lau/}
 }
 \usage{
 unemployment
 }
 \description{
-A dataset containing monthly unemployment rates from 2000 to 2023 for Maryland, Baltimore city, and all counties in the state. The data comes from the Bureau of Labor Statistics' Local Area Unemployment Statistics (LAUS).
+A dataset containing monthly unemployment rates from 2000 to 2025 for Maryland, Baltimore city, and all counties in the state. The data comes from the Bureau of Labor Statistics' Local Area Unemployment Statistics (LAUS).
 }
 \examples{
  head(unemployment)

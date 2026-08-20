@@ -3,15 +3,19 @@
 \docType{data}
 \name{acs}
 \alias{acs}
-\title{Demographics and socio-economic indicators from the 2022 ACS}
+\title{Demographics and socio-economic indicators from the 2024 ACS}
 \format{
-A data frame with 1870 rows and 32 variables:
+A data frame with 1486 rows and 41 variables:
 \describe{
-\item{level}{Factor. Geographic level (us, msa, state, county, or tract).}
+\item{level}{Factor. Geographic level (us, state, county, or tract).}
 \item{county}{Character. Name of the county for tracts, \code{NA} otherwise.}
 \item{name}{Character. The name of the geography, including FIPS codes for tracts.}
 \item{total_pop}{Numeric. Total population.}
-\item{white}{Numeric. Share of population that is White.}
+\item{ages00_17}{Numeric. Share of population ages 0-17.}
+\item{ages18_34}{Numeric. Share of population ages 18-34.}
+\item{ages35_64}{Numeric. Share of population ages 35-64.}
+\item{ages65plus}{Numeric. Share of population ages 65 and over.}
+\item{white}{Numeric. Share of population that is white.}
 \item{black}{Numeric. Share of population that is Black.}
 \item{latino}{Numeric. Share of population that is Latino.}
 \item{asian}{Numeric. Share of population that is Asian.}
@@ -27,7 +31,7 @@ A data frame with 1870 rows and 32 variables:
 \item{renter_cost_burden}{Numeric. Share of renters that are cost burdened.}
 \item{renter_severe_cost_burden}{Numeric. Share of renters that are severely cost burdened}
 \item{no_vehicle_hh}{Numeric. Share of households without a vehicle.}
-\item{median_hh_income}{Numeric. Median household income in 2022 dollars.}
+\item{median_hh_income}{Numeric. Median household income in 2024 dollars.}
 \item{ages25plus}{Numeric. Population aged 25 and over.}
 \item{less_than_high_school}{Numeric. Share of population aged 25 and over with less than a high school diploma.}
 \item{high_school_grad}{Numeric. Share of population aged 25 and over with a high school diploma.}
@@ -37,18 +41,23 @@ A data frame with 1870 rows and 32 variables:
 \item{pov_status_determined}{Numeric. Population for whom poverty status is determined.}
 \item{poverty}{Numeric. Poverty rate, or the share of the population for whom poverty status is determined that lives in a household with income below the federal poverty level.}
 \item{low_income}{Numeric. Low-income rate, or the share of the population for whom poverty status is determined that lives in a household with income below 2 times the federal poverty level.}
+\item{total_housing_units}{Numeric. Number of housing units, including vacants.}
+\item{total_vacant_units}{Numeric. Share of housing units that are vacant for whatever reason.}
+\item{units_for_rent}{Numeric. Share of housing units that are vacant and for rent.}
+\item{units_for_sale}{Numeric. Share of housing units that are vacant and for sale.}
+\item{seasonal_units}{Numeric. Share of housing units that are empty and for seasonal use.}
 \item{area_sqmi}{Numeric. Land area in square miles.}
 \item{pop_density}{Numeric. Population per square mile.}
 }
 }
 \source{
-Calculated from US Census Bureau. American Community Survey 2022 5-year estimates. Calculated by Camille with the \href{https://github.com/walkerke/tidycensus}{\code{tidycensus}} and \href{https://github.com/CT-Data-Haven/cwi}{\code{cwi}} packages.
+Calculated from US Census Bureau. American Community Survey 2024 5-year estimates. Calculated by Camille with the \href{https://github.com/walkerke/tidycensus}{\code{tidycensus}} and \href{https://github.com/CT-Data-Haven/cwi}{\code{cwi}} packages.
 }
 \usage{
 acs
 }
 \description{
-A dataset containing indicators from the US Census Bureau's 2022 American Community Survey 5-year estimates. These are given for several geographic levels, including the US, every metropolitan statistical area (MSA) in the country, the state of Maryland, and every county and census tract in Maryland.
+A dataset containing indicators from the US Census Bureau's 2024 American Community Survey 5-year estimates. These are given for several geographic levels, including the US, the state of Maryland, and every county and census tract in Maryland.
 }
 \examples{
   head(acs)

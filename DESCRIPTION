@@ -11,17 +11,12 @@ Depends:
 Imports: 
     classInt,
     cli,
-    sf,
-    terra,
-    tibble
+    terra
 Suggests: 
-    camiller (>= 0.2.3),
-    cwi (>= 1.6.3),
+    cwi (>= 2.0.0),
     dplyr,
-    fabletools,
-    feasts,
     forcats,
-    httr,
+    httr2,
     janitor,
     openxlsx,
     osmdata,
@@ -31,15 +26,20 @@ Suggests:
     tidycensus,
     tidyr,
     tigris,
-    tsibble,
-    FedData
+    FedData,
+    ipumsr,
+    srvyr,
+    quarto
 Remotes: 
-    CT-Data-Haven/cwi,
-    camille-s/camiller
-RoxygenNote: 7.3.2
+    CT-Data-Haven/cwi
 Roxygen: list(markdown = TRUE)
 Authors@R: 
     c(person("Camille", "Seaberry", , "camille.seaberry@gmail.com", role = c("cre", "aut"), 
             comment = c(ORCID = "0000-0002-5102-995X")))
 URL: https://umbc-viz.github.io/justviz/, https://github.com/umbc-viz/justviz
 License: GPL (>= 3)
+VignetteBuilder:
+    quarto
+Config/testthat/edition: 3
+Config/check/ignore-inconsequential-notes: true
+Config/roxygen2/version: 8.1.0

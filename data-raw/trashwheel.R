@@ -9,7 +9,12 @@ trashwheel <- tibble::tibble(name = openxlsx::getSheetNames(path)) |>
     dplyr::filter(grepl("Wheel", name)) |>
     dplyr::mutate(
         data = purrr::map(name, \(x) {
-            openxlsx::read.xlsx(path, sheet = x, startRow = 2)
+            openxlsx::read.xlsx(
+                path,
+                sheet = x,
+                startRow = 2,
+                detectDates = TRUE
+            )
         })
     ) |>
     dplyr::mutate(data = purrr::map(data, janitor::clean_names)) |>

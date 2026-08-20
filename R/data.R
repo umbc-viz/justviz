@@ -74,29 +74,28 @@
 "art_sf"
 
 
-#' @title Brownfields and national priority sites
-#' @description
-#' **Needs to be updated but state ArcGIS server is down**
-#' A `sf` data frame of basic information on brownfields and national priority list (superfund) sites in Maryland. This is a subset of data from the Maryland Department of the Environment's (MDE) Land Restoration Program, filtered for sites that are listed as brownfields, NPL sites, or both.
-#' @format An sf data frame with `r nrow(brownfields_sf)` rows and `r ncol(brownfields_sf)` variables:
-#' \describe{
-#'   \item{id}{Integer. An ID, identical to the object ID in the original dataset.}
-#'   \item{name}{Character. Site name listed in the MDE database.}
-#'   \item{address}{Character. Site address(es).}
-#'   \item{city}{Character. Town name.}
-#'   \item{is_ongoing_assess}{Logical, whether assessment of the site is listed as ongoing.}
-#'   \item{is_ongoing_remed}{Logical, whether remediation of the site is listed as ongoing.}
-#'   \item{is_archived}{Logical, whether the site is considered closed.}
-#'   \item{fy_open}{Numeric. Fiscal year cleanup process was opened.}
-#'   \item{fy_closed}{Numeric. Fiscal year cleanup process was closed, if applicable.}
-#'   \item{site_type}{Factor. The site type (brownfield, npl, or both).}
-#'   \item{geometry}{POINT. Location.}
-#' }
-#' @examples
-#'  head(brownfields_sf)
-#' @source Maryland Department of the Environment Land Restoration Program, available at [https://mdewin64.mde.state.md.us/LRP/index.html](https://mdewin64.mde.state.md.us/LRP/index.html)
-"brownfields_sf"
-
+# #' @title Brownfields and national priority sites
+# #' @description
+# #' **Needs to be updated but state ArcGIS server is down**
+# #' A `sf` data frame of basic information on brownfields and national priority list (superfund) sites in Maryland. This is a subset of data from the Maryland Department of the Environment's (MDE) Land Restoration Program, filtered for sites that are listed as brownfields, NPL sites, or both.
+# #' @format An sf data frame with `r nrow(brownfields_sf)` rows and `r ncol(brownfields_sf)` variables:
+# #' \describe{
+# #'   \item{id}{Integer. An ID, identical to the object ID in the original dataset.}
+# #'   \item{name}{Character. Site name listed in the MDE database.}
+# #'   \item{address}{Character. Site address(es).}
+# #'   \item{city}{Character. Town name.}
+# #'   \item{is_ongoing_assess}{Logical, whether assessment of the site is listed as ongoing.}
+# #'   \item{is_ongoing_remed}{Logical, whether remediation of the site is listed as ongoing.}
+# #'   \item{is_archived}{Logical, whether the site is considered closed.}
+# #'   \item{fy_open}{Numeric. Fiscal year cleanup process was opened.}
+# #'   \item{fy_closed}{Numeric. Fiscal year cleanup process was closed, if applicable.}
+# #'   \item{site_type}{Factor. The site type (brownfield, npl, or both).}
+# #'   \item{geometry}{POINT. Location.}
+# #' }
+# #' @examples
+# #'  head(brownfields_sf)
+# #' @source Maryland Department of the Environment Land Restoration Program, available at [https://mdewin64.mde.state.md.us/LRP/index.html](https://mdewin64.mde.state.md.us/LRP/index.html)
+# "brownfields_sf"
 
 #' @title Adult health data from the CDC
 #' @description A dataset containing health indicators from the CDC's PLACES project for the US, Maryland, and the state's counties and census tracts. Where tract-level data couldn't be directly measured, values are modeled. This is the most recent data from the 2025 update. The denominator for all variables is the population of adults ages 18 and older, except missing health insurance, which is based on adults ages 18 to 64.
@@ -127,7 +126,7 @@
 #' }
 #' @examples
 #' head(ej_natl)
-#' @source Environmental Protection Agency (EPA) EJSCREEN Environment Justice Index. ~~Data portal, definitions, and methodology are available at [https://www.epa.gov/ejscreen/technical-information-about-ejscreen](https://www.epa.gov/ejscreen/technical-information-about-ejscreen)~~ Removed in early 2025 from EPA servers by DOGE, but many people and organizations host backup copies. For this package, the data comes from an archive at Harvard Dataverse. EPA. (2024). Environmental justice mapping and screening tool (EJScreen) (Version 4.0) [Dataset]. Harvard Dataverse. https://doi.org/10.7910/DVN/RLR5AX
+#' @source Environmental Protection Agency (EPA) EJSCREEN Environment Justice Index. ~~Data portal, definitions, and methodology are available at [https://www.epa.gov/ejscreen/technical-information-about-ejscreen](https://www.epa.gov/ejscreen/technical-information-about-ejscreen)~~ Removed in early 2025 from EPA servers by DOGE, but many people and organizations host backup copies. For this package, the data comes from an archive at Harvard Dataverse. EPA. (2024). Environmental justice mapping and screening tool (EJScreen) (Version 4.0) \[Dataset\]. Harvard Dataverse. https://doi.org/10.7910/DVN/RLR5AX
 #' @seealso [EJSCREEN technical docs](https://dataverse.harvard.edu/file.xhtml?fileId=10775982&version=4.0)
 #' @rdname ej_natl
 "ej_natl"
@@ -183,6 +182,29 @@
 #' @source U.S. Census Bureau, TIGER boundary files via the [`tigris`](https://github.com/walkerke/tigris/) package
 "tracts_sf"
 
+
+#' @title Collection of trash by Mr. Trash Wheel and friends
+#' @description
+#' Amounts of trash collected by each of the 4 trash wheels in Baltimore's harbor, marked by date. Includes total weight and volume, then estimates of counts of items by type. Values may be `NA` if counts of an item were not available for a trash wheel.
+#' @format A data frame with `r nrow(trashwheel)` rows and `r ncol(trashwheel)` variables:
+#' \describe{
+#'   \item{name}{Factor. Name of trash wheel.}
+#'   \item{dumpster}{Numeric. Dumpster number within the trash wheel.}
+#'   \item{date}{Date of counting.}
+#'   \item{weight_tons}{Numeric. Total weight of trash collected in tons.}
+#'   \item{volume_cubic_yards}{Numeric. Total volume of trash collected in cubic yards.}
+#'   \item{plastic_bottles}{Numeric. Estimated number of plastic bottles collected.}
+#'   \item{polystyrene}{Numeric. Estimated number of pieces of polystyrene collected.}
+#'   \item{cigarette_butts}{Numeric. Estimated number of cigarette butts collected.}
+#'   \item{glass_bottles}{Numeric. Estimated number of glass bottles collected.}
+#'   \item{plastic_bags}{Numeric. Estimated number of plastic bags collected.}
+#'   \item{wrappers}{Numeric. Estimated number of wrappers collected.}
+#'   \item{sports_balls}{Numeric. Estimated number of sports balls collected.}
+#' }
+#' @examples
+#'   head(trashwheel)
+#' @source Waterfront Partnership of Baltimore. (2026). Trash Interception. Mr. Trash Wheel. https://www.mrtrashwheel.com/trash-interception
+"trashwheel"
 
 #' @title Monthly unemployment rates
 #' @description A dataset containing monthly unemployment rates from 2000 to 2025 for Maryland, Baltimore city, and all counties in the state. The data comes from the Bureau of Labor Statistics' Local Area Unemployment Statistics (LAUS).

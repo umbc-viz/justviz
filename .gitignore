@@ -11,3 +11,8 @@ dag.png
 **/*.zip
 data-raw/files/ej_trend
 data-raw/files/nhgis_blk2010_blk2020_ge_24.csv
+.vscode
+data-raw/files/*.dat.gz
+data-raw/files/*.xml
+data-raw/files/*
+air.toml

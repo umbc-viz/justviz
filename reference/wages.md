@@ -76,13 +76,13 @@ Microdata Series <https://usa.ipums.org/usa/>. Analyzed using the
 ``` r
  head(wages)
 #> # A tibble: 6 × 12
-#>   dimension status      sex    race_eth edu     count sample_n earn_q20 earn_q25
-#>   <fct>     <fct>       <fct>  <fct>    <fct>   <dbl>    <int>    <dbl>    <dbl>
-#> 1 total     all_workers total  total    total 2892611   135999    30881    36436
-#> 2 total     part_time   total  total    total  632931    30715     9716    12005
-#> 3 total     full_time   total  total    total 2259680   105284    42874    48582
-#> 4 by_sex    all_workers male   total    total 1487580    68775    36000    41295
-#> 5 by_sex    all_workers female total    total 1405031    67224    26796    32155
-#> 6 by_sex    part_time   male   total    total  264368    12389    10294    12860
+#>   dimension status      sex   race_eth edu     count sample_n earn_q20 earn_q25
+#>   <fct>     <fct>       <fct> <fct>    <fct>   <dbl>    <int>    <dbl>    <dbl>
+#> 1 total     all_workers total total    total 2892611   135999    30881    36436
+#> 2 total     part_time   total total    total  632931    30715     9716    12005
+#> 3 total     full_time   total total    total 2259680   105284    42874    48582
+#> 4 by_sex    all_workers men   total    total 1487580    68775    36000    41295
+#> 5 by_sex    all_workers women total    total 1405031    67224    26796    32155
+#> 6 by_sex    part_time   men   total    total  264368    12389    10294    12860
 #> # ℹ 3 more variables: earn_q50 <dbl>, earn_q75 <dbl>, earn_q80 <dbl>
 ```

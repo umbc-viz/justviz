@@ -1,0 +1,33 @@
+# Package index
+
+## Datasets
+
+- [`acs`](https://umbc-viz.github.io/justviz/reference/acs.md) :
+  Demographics and socio-economic indicators from the 2024 ACS
+- [`art_sf`](https://umbc-viz.github.io/justviz/reference/art_sf.md) :
+  Public art in Baltimore
+- [`cdc`](https://umbc-viz.github.io/justviz/reference/cdc.md) : Adult
+  health data from the CDC
+- [`ej_natl`](https://umbc-viz.github.io/justviz/reference/ej_natl.md) :
+  EPA environmental justice index
+- [`highways_sf`](https://umbc-viz.github.io/justviz/reference/highways_sf.md)
+  : Shapefile of highways
+- [`spending`](https://umbc-viz.github.io/justviz/reference/spending.md)
+  : Average annual consumer spending, 2024
+- [`tracts_sf`](https://umbc-viz.github.io/justviz/reference/tracts_sf.md)
+  : Census tracts for the Baltimore area
+- [`trashwheel`](https://umbc-viz.github.io/justviz/reference/trashwheel.md)
+  : Collection of trash by Mr. Trash Wheel and friends
+- [`unemployment`](https://umbc-viz.github.io/justviz/reference/unemployment.md)
+  : Monthly unemployment rates
+- [`wages`](https://umbc-viz.github.io/justviz/reference/wages.md) :
+  Median wages by demographic
+
+## Functions
+
+- [`jenks()`](https://umbc-viz.github.io/justviz/reference/jenks.md) :
+  Quickly cut a vector with the Jenks/Fisher algorithms
+- [`load_land_cover()`](https://umbc-viz.github.io/justviz/reference/load_land_cover.md)
+  : Load land cover raster data
+- [`round_sum100()`](https://umbc-viz.github.io/justviz/reference/round_sum100.md)
+  : Round a set of numbers so they'll add up to 100

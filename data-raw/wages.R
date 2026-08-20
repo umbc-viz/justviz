@@ -213,6 +213,9 @@ wages <- dplyr::bind_rows(out, .id = "dimension") |>
     dplyr::mutate(dplyr::across(
         c(dimension, status, sex, race_eth, edu),
         forcats::as_factor
-    ))
+    )) |>
+    dplyr::mutate(
+        sex = forcats::fct_recode(sex, men = "male", women = "female")
+    )
 
 usethis::use_data(wages, overwrite = TRUE)

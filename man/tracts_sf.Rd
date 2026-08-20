@@ -24,4 +24,4 @@ A dataset containing 2020 census tract boundaries for Baltimore and surrounding 
 \examples{
  head(tracts_sf)
 }
-\keyword{datasets}
+\keyword{ref-datasets}

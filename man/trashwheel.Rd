@@ -33,4 +33,4 @@ Amounts of trash collected by each of the 4 trash wheels in Baltimore's harbor, 
 \examples{
   head(trashwheel)
 }
-\keyword{datasets}
+\keyword{ref-datasets}

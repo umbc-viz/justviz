@@ -32,4 +32,4 @@ A dataset containing mean amounts of money spent on different categories of good
 \examples{
  head(spending)
 }
-\keyword{datasets}
+\keyword{ref-datasets}

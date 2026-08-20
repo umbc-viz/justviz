@@ -25,4 +25,4 @@ An \code{sf} object containing highways (specifically keyed as motorways or trun
 \examples{
  head(highways_sf)
 }
-\keyword{datasets}
+\keyword{ref-datasets}

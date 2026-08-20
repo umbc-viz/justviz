@@ -33,4 +33,4 @@ A spatial points dataset of public art in and near Baltimore city. This comes fr
 \examples{
  head(art_sf)
 }
-\keyword{datasets}
+\keyword{ref-datasets}

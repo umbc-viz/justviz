@@ -4,29 +4,9 @@ template:
 
 reference:
   - title: "Datasets"
-    contents:
-      - acs
-      - art_sf
-      - brownfields_sf
-      - cdc
-      - cpi
-      - ejscreen
-      - ej_natl
-      - ej_trend
-      - highways_sf
-      - nonres_sf
-      - police_stops
-      - spending
-      - tracts_sf
-      - unemployment
-      - vacant
-      - wages_by_puma
-      - wages
-      - xwalk_tract_10_to_20
-      - youth_risks
+    contents: has_keyword("datasets")
   - title: "Functions"
     contents:
-      - diversity
       - jenks
       - load_land_cover
       - round_sum100

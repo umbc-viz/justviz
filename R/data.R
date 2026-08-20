@@ -47,7 +47,6 @@
 #' @examples
 #'   head(acs)
 #' @source Calculated from US Census Bureau. American Community Survey 2024 5-year estimates. Calculated by Camille with the [`tidycensus`](https://github.com/walkerke/tidycensus) and [`cwi`](https://github.com/CT-Data-Haven/cwi) packages.
-#' @keywords ref-datasets
 "acs"
 
 
@@ -72,7 +71,6 @@
 #' @examples
 #'  head(art_sf)
 #' @source Open Baltimore data portal. Public Art Inventory, available at [https://data.baltimorecity.gov/datasets/baltimore::public-art-inventory](https://data.baltimorecity.gov/datasets/baltimore::public-art-inventory)
-#' @keywords ref-datasets
 "art_sf"
 
 
@@ -113,7 +111,6 @@
 #' @examples
 #'  head(cdc)
 #' @source Centers for Disease Control and Prevention (CDC) PLACES Project. Data portal, definitions, and methodology are available at [https://www.cdc.gov/places/](https://www.cdc.gov/places/)
-#' @keywords ref-datasets
 "cdc"
 
 
@@ -132,7 +129,6 @@
 #' @source Environmental Protection Agency (EPA) EJSCREEN Environment Justice Index. ~~Data portal, definitions, and methodology are available at [https://www.epa.gov/ejscreen/technical-information-about-ejscreen](https://www.epa.gov/ejscreen/technical-information-about-ejscreen)~~ Removed in early 2025 from EPA servers by DOGE, but many people and organizations host backup copies. For this package, the data comes from an archive at Harvard Dataverse. EPA. (2024). Environmental justice mapping and screening tool (EJScreen) (Version 4.0) \[Dataset\]. Harvard Dataverse. https://doi.org/10.7910/DVN/RLR5AX
 #' @seealso [EJSCREEN technical docs](https://dataverse.harvard.edu/file.xhtml?fileId=10775982&version=4.0)
 #' @rdname ej_natl
-#' @keywords ref-datasets
 "ej_natl"
 
 
@@ -148,7 +144,6 @@
 #' @examples
 #'  head(highways_sf)
 #' @source OpenStreetMap database via the [`osmdata`](https://github.com/ropensci/osmdata) package.
-#' @keywords ref-datasets
 "highways_sf"
 
 
@@ -171,7 +166,6 @@
 #' @examples
 #'  head(spending)
 #' @source US Census Bureau's Consumer Expenditure Survey, available from the Bureau of Labor Statistics [https://www.bls.gov/cex/data.htm](https://www.bls.gov/cex/data.htm)
-#' @keywords ref-datasets
 "spending"
 
 
@@ -186,7 +180,6 @@
 #' @examples
 #'  head(tracts_sf)
 #' @source U.S. Census Bureau, TIGER boundary files via the [`tigris`](https://github.com/walkerke/tigris/) package
-#' @keywords ref-datasets
 "tracts_sf"
 
 
@@ -211,7 +204,6 @@
 #' @examples
 #'   head(trashwheel)
 #' @source Waterfront Partnership of Baltimore. (2026). Trash Interception. Mr. Trash Wheel. https://www.mrtrashwheel.com/trash-interception
-#' @keywords ref-datasets
 "trashwheel"
 
 #' @title Monthly unemployment rates
@@ -225,7 +217,6 @@
 #' @examples
 #'  head(unemployment)
 #' @source U.S. Bureau of Labor Statistics, Local Area Unemployment Statistics via API with the [`cwi`](https://github.com/CT-Data-Haven/cwi) package. [https://www.bls.gov/lau/](https://www.bls.gov/lau/)
-#' @keywords ref-datasets
 "unemployment"
 
 
@@ -249,5 +240,4 @@
 #' @examples
 #'  head(wages)
 #' @source U.S. Census Bureau, American Community Survey, Integrated Public Use Microdata Series [https://usa.ipums.org/usa/](https://usa.ipums.org/usa/). Analyzed using the [`srvyr`](https://github.com/gergness/srvyr) package.
-#' @keywords ref-datasets
 "wages"

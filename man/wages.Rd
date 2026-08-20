@@ -33,4 +33,4 @@ A dataset containing median individual earnings by various dimensions (sex, race
 \examples{
  head(wages)
 }
-\keyword{ref-datasets}
+\keyword{datasets}

@@ -29,4 +29,4 @@ head(ej_natl)
 \seealso{
 \href{https://dataverse.harvard.edu/file.xhtml?fileId=10775982&version=4.0}{EJSCREEN technical docs}
 }
-\keyword{ref-datasets}
+\keyword{datasets}

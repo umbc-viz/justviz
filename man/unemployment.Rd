@@ -24,4 +24,4 @@ A dataset containing monthly unemployment rates from 2000 to 2025 for Maryland, 
 \examples{
  head(unemployment)
 }
-\keyword{ref-datasets}
+\keyword{datasets}

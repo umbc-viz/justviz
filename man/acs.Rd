@@ -62,4 +62,4 @@ A dataset containing indicators from the US Census Bureau's 2024 American Commun
 \examples{
   head(acs)
 }
-\keyword{ref-datasets}
+\keyword{datasets}

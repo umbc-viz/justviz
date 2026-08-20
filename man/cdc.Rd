@@ -27,4 +27,4 @@ A dataset containing health indicators from the CDC's PLACES project for the US,
 \examples{
  head(cdc)
 }
-\keyword{ref-datasets}
+\keyword{datasets}

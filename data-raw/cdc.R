@@ -4,7 +4,7 @@ places_urls <- list(
 )
 
 p_query <- list(
-    "$query" = "select year, stateabbr, coalesce(locationname, stateabbr) as location, short_question_text as indicator, data_value as value, totalpopulation as pop
+    "$query" = "select year, stateabbr, coalesce(locationname, stateabbr) as location, locationid as fips, short_question_text as indicator, data_value as value, totalpopulation as pop
   where data_value_type = 'Crude prevalence'
   and stateabbr in ('MD', 'US')
   and measureid in ('CASTHMA', 'DEPRESSION', 'DIABETES', 'DENTAL', 'CHECKUP', 'ACCESS2', 'MHLTH', 'MOBILITY', 'SLEEP', 'CANCER')
@@ -14,6 +14,11 @@ p_query <- list(
 # use socrata API to get just columns of interest for US average plus MD counties & tracts
 # keep as list to bind together by level
 # need weighted mean of tract values to get statewide estimates
+# doesn't actually differentiate btw Balt city & county, so use fips codes
+fips <- tidycensus::fips_codes |>
+    dplyr::filter(state == "MD") |>
+    dplyr::mutate(fips = paste0(state_code, county_code)) |>
+    dplyr::select(county, fips)
 places_read <- purrr::map(places_urls, httr::GET, query = p_query) |>
     purrr::map(\(x) {
         httr::content(x, col_types = readr::cols(.default = "c"))
@@ -28,12 +33,15 @@ places[["state"]] <- places_read$tract |>
     dplyr::group_by(year, stateabbr, location = "Maryland", indicator) |>
     dplyr::summarise(value = weighted.mean(value, pop), pop = sum(pop)) |>
     dplyr::ungroup()
-places[["county"]] <- dplyr::filter(places_read$county, location != "US")
+# rename counties based on fips code
+places[["county"]] <- dplyr::filter(places_read$county, location != "US") |>
+    dplyr::left_join(fips, by = "fips") |>
+    dplyr::select(year, stateabbr, location = county, indicator, value, pop)
 places[["tract"]] <- places_read$tract
 cdc <- dplyr::bind_rows(places, .id = "level") |>
     dplyr::mutate(level = forcats::as_factor(level)) |>
     dplyr::mutate(indicator = stringr::str_to_sentence(indicator)) |>
-    dplyr::select(-stateabbr)
+    dplyr::select(-stateabbr, -fips)
 
 
 usethis::use_data(cdc, overwrite = TRUE)

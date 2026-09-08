@@ -189,7 +189,7 @@
 #' @format A data frame with `r nrow(trashwheel)` rows and `r ncol(trashwheel)` variables:
 #' \describe{
 #'   \item{name}{Factor. Name of trash wheel.}
-#'   \item{dumpster}{Numeric. Dumpster number within the trash wheel.}
+#'   \item{dumpster}{Numeric. Observation number for that trash wheel.}
 #'   \item{date}{Date of counting.}
 #'   \item{weight_tons}{Numeric. Total weight of trash collected in tons.}
 #'   \item{volume_cubic_yards}{Numeric. Total volume of trash collected in cubic yards.}

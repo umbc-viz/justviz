@@ -21,7 +21,7 @@ A data frame with 1313 rows and 12 variables:
 
 - dumpster:
 
-  Numeric. Dumpster number within the trash wheel.
+  Numeric. Observation number for that trash wheel.
 
 - date:
 

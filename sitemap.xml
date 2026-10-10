@@ -1,21 +1,26 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://umbc-viz.github.io/justviz/404.html</loc></url>
+<url><loc>https://umbc-viz.github.io/justviz/CHANGELOG.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/LICENSE.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/authors.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/index.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/acs.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/art_sf.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/cdc.html</loc></url>
+<url><loc>https://umbc-viz.github.io/justviz/reference/climate.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/ej_natl.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/highways_sf.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/index.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/jenks.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/load_land_cover.html</loc></url>
+<url><loc>https://umbc-viz.github.io/justviz/reference/md_regions.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/round_sum100.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/spending.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/tracts_sf.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/trashwheel.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/unemployment.html</loc></url>
+<url><loc>https://umbc-viz.github.io/justviz/reference/vacants_by_tract.html</loc></url>
+<url><loc>https://umbc-viz.github.io/justviz/reference/vacants_sf.html</loc></url>
 <url><loc>https://umbc-viz.github.io/justviz/reference/wages.html</loc></url>
 </urlset>
 

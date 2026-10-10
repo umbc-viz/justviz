@@ -11,12 +11,12 @@ Source:
 [`DESCRIPTION`](https://github.com/umbc-viz/justviz/blob/main/DESCRIPTION)
 
 Seaberry C (2026). *justviz: justviz visualization tools*. R package
-version 0.2.6, <https://umbc-viz.github.io/justviz/>.
+version 0.3.0, <https://umbc-viz.github.io/justviz/>.
 
     @Manual{,
       title = {justviz: justviz visualization tools},
       author = {Camille Seaberry},
       year = {2026},
-      note = {R package version 0.2.6},
+      note = {R package version 0.3.0},
       url = {https://umbc-viz.github.io/justviz/},
     }

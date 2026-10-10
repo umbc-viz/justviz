@@ -8,10 +8,14 @@
   Public art in Baltimore
 - [`cdc`](https://umbc-viz.github.io/justviz/reference/cdc.md) : Adult
   health data from the CDC
+- [`climate`](https://umbc-viz.github.io/justviz/reference/climate.md) :
+  Maryland Climate Vulnerability Score
 - [`ej_natl`](https://umbc-viz.github.io/justviz/reference/ej_natl.md) :
   EPA environmental justice index
 - [`highways_sf`](https://umbc-viz.github.io/justviz/reference/highways_sf.md)
   : Shapefile of highways
+- [`md_regions`](https://umbc-viz.github.io/justviz/reference/md_regions.md)
+  : Maryland counties by region
 - [`spending`](https://umbc-viz.github.io/justviz/reference/spending.md)
   : Average annual consumer spending, 2024
 - [`tracts_sf`](https://umbc-viz.github.io/justviz/reference/tracts_sf.md)
@@ -20,6 +24,10 @@
   : Collection of trash by Mr. Trash Wheel and friends
 - [`unemployment`](https://umbc-viz.github.io/justviz/reference/unemployment.md)
   : Monthly unemployment rates
+- [`vacants_by_tract`](https://umbc-viz.github.io/justviz/reference/vacants_by_tract.md)
+  : Baltimore city vacant building notices per tract
+- [`vacants_sf`](https://umbc-viz.github.io/justviz/reference/vacants_sf.md)
+  : Baltimore city vacant building notices, points
 - [`wages`](https://umbc-viz.github.io/justviz/reference/wages.md) :
   Median wages by demographic
 

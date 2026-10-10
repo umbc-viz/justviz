@@ -14,9 +14,9 @@ Imports:
     terra
 Suggests: 
     cwi (>= 2.0.0),
+    httr2,
     dplyr,
     forcats,
-    httr2,
     janitor,
     openxlsx,
     osmdata,
@@ -29,7 +29,8 @@ Suggests:
     FedData,
     ipumsr,
     srvyr,
-    quarto
+    quarto,
+    arcgislayers
 Remotes: 
     CT-Data-Haven/cwi
 Roxygen: list(markdown = TRUE)

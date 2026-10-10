@@ -74,6 +74,24 @@
 "art_sf"
 
 
+#' @title Maryland Climate Vulnerability Score
+#' @description
+#' Tract-level values going into the state Department of the Environment's Climate Vulnerability Score. Similar to EJSCREEN, the score scales risks of environmental hazards based on vulnerable socio-economic populations. The subset of data here just includes tree canopy cover, urban heat islands, drought risk, and flood storm surge, plus the overall score percentile.
+#' @format A data frame with `r nrow(climate)` rows and `r ncol(climate)` variables:
+#' \describe{
+#'   \item{geoid}{Character. The tract FIPS code.}
+#'   \item{tcc}{Numeric. Tree canopy coverage as a percentage of land area that is tree canopy.}
+#'   \item{drought}{Integer. Ranking of area and intensity of drought conditions, with higher numbers as more severe risk.}
+#'   \item{uhi}{Integer. Presence of urban heat island compared to other parts of the same city, with higher numbers as more severe heat.}
+#'   \item{flood_ss}{Integer. Ranking of historical and predicted flood storm surge impacts, with higher numbers as higher risk.}
+#'   \item{cvs_pctl}{Numeric. Percentile of tract-level Climate Vulnerability Score.}
+#' }
+#' @examples
+#'  head(climate)
+#' @source Maryland iMAP Data Catalog. MD Climate Vulnerability Score, available at [https://data.imap.maryland.gov/datasets/maryland::md-climate-vulnerability-score](https://data.imap.maryland.gov/datasets/maryland::md-climate-vulnerability-score/about). See methodology at [https://mde.maryland.gov/programs/air/Climate-in-md/Documents/Climate%20Vulnerability/CSNA_%C2%A7_1-702_Methodology_1.5.pdf](https://mde.maryland.gov/programs/air/Climate-in-md/Documents/Climate%20Vulnerability/CSNA_%C2%A7_1-702_Methodology_1.5.pdf)
+"climate"
+
+
 # #' @title Brownfields and national priority sites
 # #' @description
 # #' **Needs to be updated but state ArcGIS server is down**
@@ -145,6 +163,19 @@
 #'  head(highways_sf)
 #' @source OpenStreetMap database via the [`osmdata`](https://github.com/ropensci/osmdata) package.
 "highways_sf"
+
+#' @title Maryland counties by region
+#' @description
+#' A lookup table of each county's region within the state.
+#' @format A data frame with `r nrow(md_regions)` rows and `r ncol(md_regions)` variables:
+#' \describe{
+#'   \item{region}{Character. One of 5 regions in Maryland: Capitol Region, Central Maryland, Eastern Shore, Southern Maryland, and Western Maryland.}
+#'   \item{county}{Character. County name.}
+#' }
+#' @examples
+#' head(md_regions)
+#' @source Maryland Office of Tourism, [https://www.visitmaryland.org/article/maryland-regions](https://www.visitmaryland.org/article/maryland-regions)
+"md_regions"
 
 
 #' @title Average annual consumer spending, 2024
@@ -218,6 +249,37 @@
 #'  head(unemployment)
 #' @source U.S. Bureau of Labor Statistics, Local Area Unemployment Statistics via API with the [`cwi`](https://github.com/CT-Data-Haven/cwi) package. [https://www.bls.gov/lau/](https://www.bls.gov/lau/)
 "unemployment"
+
+
+#' @title Baltimore city vacant building notices, points
+#' @description These are all current vacant building notices issued by Baltimore as of `r attr(vacants_sf, "last_updated")` as individual points.
+#' @format An sf data frame with `r nrow(vacants_sf)` rows and `r ncol(vacants_sf)` variables:
+#' \describe{
+#'   \item{\code{objectid}}{Integer. Unique ID}
+#'   \item{\code{date_notice}}{Date. The date the notice was posted.}
+#'   \item{\code{blocklot}}{Character. Block lot number within the city.}
+#'   \item{\code{geometry}}{POINT. Spatial location of the building for which the notice was posted. This uses the same CRS as the tracts shapefile so you can do a spatial join without reprojecting.}
+#'}
+#' @examples
+#'  head(vacants_sf)
+#'  # date dataset was downloaded
+#'  attr(vacants_sf, "last_updated")
+#' @source Open Data Baltimore portal. Vacant Building Notices, available at [https://data.baltimorecity.gov/datasets/691d65a5f85640e6aaa46930bd9dc102_1](https://data.baltimorecity.gov/datasets/691d65a5f85640e6aaa46930bd9dc102_1/)
+"vacants_sf"
+
+#' @title Baltimore city vacant building notices per tract
+#' @description This is the count all current vacant building notices issued by Baltimore as of `r attr(vacants_sf, "last_updated")` per tract. This is just the points version of the vacants data, joined with the tracts shapefile and aggregated. Note that tracts without vacants won't appear here.
+#' @format A data frame with `r nrow(vacants_by_tract)` rows and `r ncol(vacants_by_tract)` variables:
+#' \describe{
+#'   \item{\code{geoid}}{Character. FIPS code for the census tract}
+#'   \item{\code{n_vacants}}{Integer. Count of vacant notices per tract}
+#'}
+#' @examples
+#'  head(vacants_by_tract)
+#'  # date dataset was downloaded
+#'  attr(vacants_by_tract, "last_updated")
+#' @source Point data from Open Data Baltimore portal. Vacant Building Notices, available at [https://data.baltimorecity.gov/datasets/691d65a5f85640e6aaa46930bd9dc102_1](https://data.baltimorecity.gov/datasets/691d65a5f85640e6aaa46930bd9dc102_1/). Tract boundaries from U.S. Census Bureau, TIGER boundary files via the [`tigris`](https://github.com/walkerke/tigris/) package
+"vacants_by_tract"
 
 
 #' @title Median wages by demographic

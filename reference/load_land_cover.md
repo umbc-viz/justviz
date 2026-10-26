@@ -30,15 +30,16 @@ with 1 band.
 landcover <- load_land_cover()
 landcover
 #> class       : SpatRaster
-#> size        : 4179, 3154, 1  (nrow, ncol, nlyr)
+#> size        : 4214, 3273, 1  (nrow, ncol, nlyr)
 #> resolution  : 30, 30  (x, y)
-#> extent      : 1587735, 1682355, 1902705, 2028075  (xmin, xmax, ymin, ymax)
+#> extent      : 1587750, 1685940, 1902390, 2028810  (xmin, xmax, ymin, ymax)
 #> coord. ref. : NAD83 / Conus Albers (EPSG:5070)
-#> source(s)   : memory
-#> varname     : landcover
-#> name        : Class
-#> min value   :  0.04
-#> max value   :  0.37
+#> source      : landcover.tif
+#> color table : 1
+#> categories  : Class, Color, Description
+#> name        :                        Class
+#> min value   :                   Open Water
+#> max value   : Emergent Herbaceous Wetlands
 if (FALSE) { # \dontrun{
   if (interactive()) {
     terra::plot(landcover)

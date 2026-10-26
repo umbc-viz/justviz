@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">justviz</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,15 +56,16 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">landcover</span> <span class="op">&lt;-</span> <span class="fu">load_land_cover</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">landcover</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> size        : 4179, 3154, 1  (nrow, ncol, nlyr)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> size        : 4214, 3273, 1  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 30, 30  (x, y)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 1587735, 1682355, 1902705, 2028075  (xmin, xmax, ymin, ymax)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 1587750, 1685940, 1902390, 2028810  (xmin, xmax, ymin, ymax)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : NAD83 / Conus Albers (EPSG:5070)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> source(s)   : memory</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> varname     : landcover</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> name        : Class</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :  0.04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max value   :  0.37</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : landcover.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> color table : 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> categories  : Class, Color, Description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> name        :                        Class</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :                   Open Water</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max value   : Emergent Herbaceous Wetlands</span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
 <span class="r-in"><span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span>    <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">landcover</span><span class="op">)</span></span></span>

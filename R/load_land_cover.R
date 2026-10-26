@@ -20,6 +20,6 @@ load_land_cover <- function() {
     fn <- paste(type, "tif", sep = ".")
     path <- system.file("raster", fn, package = "justviz")
     r <- terra::rast(path)
-    r <- round(r / 255, digits = 2)
+    # r <- round(r / 255, digits = 2)
     r
 }

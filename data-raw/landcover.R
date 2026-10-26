@@ -1,17 +1,14 @@
-# tree canopy raster from NLCD
-tracts_sf <- tigris::tracts(
-    state = "MD",
-    county = c(
-        "Baltimore County",
-        "Baltimore city",
-        "Anne Arundel County",
-        "Howard County"
-    ),
-    cb = TRUE
-) |>
-    dplyr::select(county = NAMELSADCO, geoid = GEOID) |>
-    rmapshaper::ms_simplify(keep = 0.5)
-balt <- tracts_sf |>
+# land cover raster from NLCD
+balt <- tigris::counties(state = "MD") |>
+    dplyr::filter(
+        NAMELSAD %in%
+            c(
+                "Baltimore city",
+                "Baltimore County",
+                "Anne Arundel County",
+                "Howard County"
+            )
+    ) |>
     sf::st_union() |>
     sf::st_bbox() |>
     sf::st_as_sfc()
